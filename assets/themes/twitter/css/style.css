@@ -1,13 +1,69 @@
-/* Custom container */
+/* custom container */
+body {
+}
+
 .container-narrow {
   margin: 0 auto;
-  max-width: 700px; }
+  min-width: 900px; }
 
 .container-narrow > hr {
   margin: 30px 0; }
 
-.navbar .nav {
-  float: right; }
+.content.no-header {
+  padding-top: 40px;
+}
+
+.content div.row div.span8 > img {
+  display: block;
+  margin: 10px auto;
+}
+
+.content div.row div.span4 h4 {
+  margin-top: 10px;
+}
+
+.content div.row div.span4 h4:first {
+  margin-top: 0;
+}
+
+.container > footer {
+  margin-top: 20px;
+  clear: both;
+}
+
+/* line 103, ../_sass/_base.scss */
+.container > footer p {
+  text-align: center;
+  /* center align it with the container */
+}
+
+.content p {
+  padding-bottom: 15px;
+  line-height: 25px;
+  margin: 0;
+}
+
+.page-header {
+  padding: 20px 20px 10px;
+  margin: 20px -20px 20px;
+}
+/* line 155, ../_sass/_base.scss */
+.page-header h1 {
+  margin-bottom: 0;
+}
+
+/* line 161, ../_sass/_base.scss */
+.topbar .btn {
+  border: 0;
+}
+
+/* Pagination */
+/* line 168, ../_sass/_base.scss */
+div.pagination li a {
+  -webkit-box-shadow: 0px 1px 1px black;
+  -moz-box-shadow: 0px 1px 1px black;
+  box-shadow: 0px 1px 1px black;
+}
 
 /* posts index */
 .post > h3.title {
@@ -60,6 +116,6 @@
   background-color: #e5e5e5; }
 
 .tag_box a.active {
-  background: #57A957;
+  background: #57a957;
   border: 1px solid #4c964d;
-  color: #FFF; }
+  color: #fff; }

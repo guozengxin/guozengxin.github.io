@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "custom domain for github pages"
+title: "为github pages设置个人域名"
 description: "利用jekyll及github可以快速建立个人站点。如果不想用github默认的username.github.io这个域名的话，可以增加自己的域名。"
 category: blog
 tags: [个人域名, github]
 ---
 {% include JB/setup %}
 
-## 为github pages设置个人域名
+1. 利用jekyll及github可以快速建立个人站点。如果不想用github默认的username.github.io这个域名的话，可以增加自己的域名。
+2. 本篇是用jekyll创建的第一篇文章，作为简单练习
 
-- 利用jekyll及github可以快速建立个人站点。如果不想用github默认的username.github.io这个域名的话，可以增加自己的域名。
-- 本篇是用jekyll创建的第一篇文章，作为简单练习
+<!-- more -->
 
 ### 在个人repo中设置域名
 
