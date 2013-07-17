@@ -11,6 +11,7 @@ tags: [linux, crontab, 环境变量]
 
 今天写的一个脚本，直接在shell中可以正常运行，但是放到crontab中不能正常运行，出现了**“pig: command not found”**错误。判断应该是crontab中的`$PATH`变量和当前环境不一致的问题。
 
+<!-- more -->
 ### Test
 
 写一个简单脚本来测试crontab中的环境变量：
