@@ -11,6 +11,8 @@ tags: [C++, Python]
 
 如果觉得脚本执行语言执行太慢，可以使用[SWIG](http://www.swig.org/)将C函数嵌入到[Tcl](http://www.tcl.tk/), [Perl](http://www.perl.org/), [Python](http://www.python.org/), [Java](http://java.sun.com/)和[C#](http://msdn.microsoft.com/netframework)中执行。
 
+<!-- more -->
+
 本文中的C代码：
 {% highlight c++ %}
 /* File : example.c */
@@ -56,7 +58,7 @@ extern int my_mod(int x, int y);
 extern char *get_time();
 {% endhighlight %}
 
-# 编译为python语言
+### 编译为python语言
 
 用SWIG把C语言编译为python模块很简单，只需要执行以下步骤：
 
@@ -77,3 +79,7 @@ $ gcc -shared example.o example_wrap.o -o _example.so
 >>> example.get_time()
 'Tue Jul 23 23:10:17 2013\n'
 {% endhighlight %}
+
+### 参考
+
+1. swig tutorial: [http://www.swig.org/tutorial.html](http://www.swig.org/tutorial.html)
