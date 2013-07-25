@@ -203,7 +203,6 @@ struct模块中有三个比较重要的函数：
    </tr>
 </table>
 <br/>
-<br/>
 
 ### 使用示例
 
@@ -259,15 +258,15 @@ pack后，bytes就是一个str字符串，内容与a的二进制存储内容相�
 
 ### 可能遇到的错误
 
-1. struct.pack时可能会遇到：
-> struct.error: pack requires exactly 2 arguments
+1. struct.pack时可能会遇到： 
+	> struct.error: pack requires exactly 2 arguments
 
-这一错误说明format中的参数个数与实际输入的参数个数不符。如`bytes = struct.pack('2I', a)`需要2个参数而只输入了一个
+	这一错误说明format中的参数个数与实际输入的参数个数不符。如`bytes = struct.pack('2I', a)`需要2个参数而只输入了一个
 
-2. struct.unpack时可能会遇到：
-> struct.error: unpack requires a string argument of length \*
+2. struct.unpack时可能会遇到： 
+	> struct.error: unpack requires a string argument of length \*
 
-这一错误说明format中参数代表的数据占用内存数，与输入的数据占用的内存长度不符。这时候可以用`struct.calcsize(fmt)`函数检查format字符代表的长度，及用len(string)函数来检测数据的长度。
+	这一错误说明format中参数代表的数据占用内存数，与输入的数据占用的内存长度不符。这时候可以用`struct.calcsize(fmt)`函数检查format字符代表的长度，及用len(string)函数来检测数据的长度。
 
 ### 参考
 
