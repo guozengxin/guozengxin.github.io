@@ -26,12 +26,6 @@ struct模块中有三个比较重要的函数：
 
 ### struct中支持的format格式
 
-<style type="text/css">
-	table,td,th {
-		border:2px solid gray;
-	}
-</style>
-
 <table >
    <tr>
       <th>Format</th>

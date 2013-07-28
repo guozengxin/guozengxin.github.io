@@ -119,3 +119,8 @@ div.pagination li a {
   background: #57a957;
   border: 1px solid #4c964d;
   color: #fff; }
+
+table,td,th {
+	border:2px solid #A0A0A0;
+	padding: 3px;
+}

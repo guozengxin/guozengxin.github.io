@@ -11,6 +11,7 @@ Thumbs.db
 .o
 .pyc
 .so
+code/.o
 */.o
 */.so
 */.pyc
