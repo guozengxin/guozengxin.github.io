@@ -3,7 +3,7 @@ layout: post
 title: "python语言的logging模块介绍"
 description: "python语言自带了一个logging模块，简单易用，功能强大。"
 category: python
-tags: [python logging]
+tags: [python, logging]
 ---
 {% include JB/setup %}
 
