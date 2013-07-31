@@ -31,10 +31,8 @@ body {
   clear: both;
 }
 
-/* line 103, ../_sass/_base.scss */
 .container > footer p {
   text-align: center;
-  /* center align it with the container */
 }
 
 .content p {
@@ -47,18 +45,15 @@ body {
   padding: 20px 20px 10px;
   margin: 20px -20px 20px;
 }
-/* line 155, ../_sass/_base.scss */
 .page-header h1 {
   margin-bottom: 0;
 }
 
-/* line 161, ../_sass/_base.scss */
 .topbar .btn {
   border: 0;
 }
 
 /* Pagination */
-/* line 168, ../_sass/_base.scss */
 div.pagination li a {
   -webkit-box-shadow: 0px 1px 1px black;
   -moz-box-shadow: 0px 1px 1px black;
@@ -123,4 +118,12 @@ div.pagination li a {
 table,td,th {
 	border:2px solid #A0A0A0;
 	padding: 3px;
+}
+
+.span8 h2 {
+	background: #F2F2F2;
+	color: #20435C;
+	border-bottom: 1px solid #CCC;
+	margin: 20px -20px 10px -20px;
+	padding: 3px 0 3px 10px;
 }
