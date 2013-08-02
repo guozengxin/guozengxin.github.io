@@ -7,7 +7,7 @@ tags: [python, logging]
 ---
 {% include JB/setup %}
 
-## OverView
+### OverView
 
 在进行软件开发时，一个重要的工作就是打日志。在其他语言中，会有各种第三方日志组件，如log4net，log4cpp等。但python语言自带有一个强大的日志模块: logging。支持日志的分发，设置日志级别，设置日志格式等。现在python的日志模块做简要介绍并说明简单用法。
 
@@ -35,7 +35,7 @@ logging.critical('critial log')
 
 <!-- more -->
 
-## 打印日志到文件
+### 打印日志到文件
 
 下面的代码可以将日志输出到文件中
 #logging_example2.py
@@ -53,7 +53,7 @@ logging.warning('And this, too')
 	INFO:root:So should this
 	WARNING:root:And this, too
 
-## 日志级别介绍
+### 日志级别介绍
 
 logging模块中的日志分为5个级别, 从高到低依次是：CRITICAL > ERROR > WARNING > INFO > DEBUG.设置了日志级别之后，低于该级别的日志将会被忽略。
 
@@ -71,7 +71,7 @@ python --log=INFO xxx.py
 logging.basicConfig(filename='example.log',level=logging.DEBUG)
 {% endhighlight %}
 
-## 改变日志格式
+### 改变日志格式
 
 `basicConfig()`函数可以设置日志的显示格式：
 
@@ -184,7 +184,7 @@ logging.warning('And this, too')
    </tr>
 </table>
 
-## 设置时间格式
+### 设置时间格式
 
 logging默认的时间格式是ISO8601, 如果你对默认的时间格式不满意，可以在配置函数中自己设置：
 
@@ -202,6 +202,6 @@ logging.debug('show time')
 
 logging模块的基础用法就介绍的这儿，相信在小规模的程序中已经足够使用了。下一篇将介绍logging模块的进阶用法。
 
-## 参考：
+### 参考：
 
 1. Python Logging HOWTO: <http://docs.python.org/2/howto/logging.html>.
