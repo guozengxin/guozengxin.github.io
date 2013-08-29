@@ -8,11 +8,11 @@
 </div>
 
 <div class="row">
-  <div class="span8">
+  <div class="span9">
     {{ content }}
     <hr>
     <div class="row-fluid">
-      <div class="span8">
+      <div class="span9">
         <div class="pagination btn-group">
           {% if page.previous %}
             <a class="btn prev" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a>
@@ -27,7 +27,7 @@
           {% endif %}
         </div>
       </div>
-      <div class="span4">
+      <div class="span3">
         <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare" style="padding-top:12px;">
           <a class="bds_tsina"></a>
           <a class="bds_tqq"></a>
@@ -40,7 +40,7 @@
     {% include JB/comments %}
   </div>
   
-  <div class="span4">
+  <div class="span3">
     <section>
       <h3>Published</h3>
       <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
