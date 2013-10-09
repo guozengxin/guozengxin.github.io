@@ -39,4 +39,49 @@ git的本质是基于内容寻址(content-addressable)的一套文件系统，�
 
 ### git 对象
 
-git 本质上是一个根据内容寻址的文件系统，意思就是，git 本身存储的都是 key-value 对。它可以根据输入的key进行写入和读取内容，且 key 是根据内容生成的。底层命令
+git 本质上是一个根据内容寻址的文件系统，意思就是，git 本身存储的都是 key-value 对。它可以根据输入的key进行写入和读取内容，且 key 是根据内容生成的。底层命令`hash-object`可以用来存取 key-value 对，它会将数据保存在`.git`目录并返回数据对应的键值。下面通过一些示例来演示 key-value 的存取。
+
+{% highlight bash %}
+$ git init
+Initialized empty Git repository in /tmp/test/.git/
+$ find .git/objects -type f
+$ 
+{% endhighlight %}
+
+在一个空目录执行`git init`之后，生成了一个`.git`目录，可以看出，这个目录中没有任何文件。现在，我们用`git hash-object`命令来向其中添加一些内容。
+
+{% highlight bash %}
+$ echo "test content" | git hash-object -w --stdin
+d670460b4b4aece5915caf5c68d12f560a9fe3e4
+{% endhighlight %}
+
+参数`-w`的意思是 write，指示`hash-object`存储内容，不用`-w`参数则仅仅打印键值。`--stdin`表示从标准输入来读取内容，也可以从文件中读取，直接将文件名作为参数即可。命令返回一个长度为40的 key，使用了 SHA-1 算法根据内容计算出来的。可以看出，在`.git`目录中已经存储了该内容。
+
+{% highlight bash %}
+$ find .git/objects -type f
+.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4
+{% endhighlight %}
+
+在目录`.git/objects`下生成了一个文件，用 key 的前两位作为子目录名，余下的38位作为文件名。命令`git cat-file`可以读取文件，`-p`参数为 pretty print, 打印内容。
+
+{% highlight bash %}
+$git cat-file -p d670460b4b4aece5915caf5c68d12f560a9fe3e4
+test content
+{% endhighlight %}
+
+接下来，可以向`.git/objects`下添加更多的内容，下面用读文件的形式添加。
+
+{% highlight bash %}
+$ echo "my test content 1" > test.txt
+$ git hash-object -w test.txt
+817c8395f48d6de9de2aaa20bb2d7a3ea96b642c
+$ echo "my test content 2" > test.txt
+$ git hash-object -w test.txt
+2c6f5b15d2c42d7e2068aa2aeddef1c6ea025b4d
+$ find .git/objects -type f
+.git/objects/2c/6f5b15d2c42d7e2068aa2aeddef1c6ea025b4d
+.git/objects/81/7c8395f48d6de9de2aaa20bb2d7a3ea96b642c
+.git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4
+{% endhighlight %}
+
+
