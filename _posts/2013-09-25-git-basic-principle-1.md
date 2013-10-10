@@ -39,6 +39,8 @@ git的本质是基于内容寻址(content-addressable)的一套文件系统，�
 
 ### git 对象
 
+#### blob 对象
+
 git 本质上是一个根据内容寻址的文件系统，意思就是，git 本身存储的都是 key-value 对。它可以根据输入的key进行写入和读取内容，且 key 是根据内容生成的。底层命令`hash-object`可以用来存取 key-value 对，它会将数据保存在`.git`目录并返回数据对应的键值。下面通过一些示例来演示 key-value 的存取。
 
 {% highlight bash %}
@@ -84,4 +86,88 @@ $ find .git/objects -type f
 .git/objects/d6/70460b4b4aece5915caf5c68d12f560a9fe3e4
 {% endhighlight %}
 
+现在我们可以通过 key 将文件恢复为历史版本。恢复为第一个版本：
 
+{% highlight bash %}
+$ git cat-file -p 817c8395f48d6de9de2aaa20bb2d7a3ea96b642c > test.txt
+$ cat test.txt
+my test content 1
+{% endhighlight %}
+
+恢复为第二个版本：
+
+{% highlight bash %}
+$ git cat-file -p 2c6f5b15d2c42d7e2068aa2aeddef1c6ea025b4d > test.txt
+$ cat test.txt
+my test content 2
+{% endhighlight %}
+
+可以看出，git 是根据文件内容的 SHA-1 值来作为 key 来存储内容的，而和文件名没有关系。这种对象类型称为 blob。可以通过命令`git cat-file -t`来显示对象类型：
+
+{% highlight bash %}
+$ git cat-file -t 2c6f5b15d2c42d7e2068aa2aeddef1c6ea025b4d  
+blob
+{% endhighlight %}
+
+#### tree 对象
+
+git 以一种类似 UNIX 文件系统的方式存储内容，tree 对象对应着目录，可以存储文件名，blob 对象对应 inodes 或者文件内容。一个 tree 对象包含一条或多条记录，每一条记录指向一个 blob 对象或者子 tree 对象的 SHA-1 指针，并记录了对象的权限、类型和文件名信息。添加了两个文件和一个子目录后的 tree 对象信息：
+
+{% highlight bash %}
+$ git cat-file -p master^{tree} 
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 README
+040000 tree 543b9bebdc6bd5c4b22136034a95dd097a57d3dd src
+100644 blob 2c6f5b15d2c42d7e2068aa2aeddef1c6ea025b4d test.txt
+{% endhighlight %}
+
+`master^{tree}`表示 master 分支上最新提交指向的 tree 对象。注意 src 是一个子 tree 对象。
+
+可以通过暂存区域（index）来创建和写入 tree，必须先写文件暂存从而创建一个 index，然后将 index 中的内容写入到 tree 对象中。创建 index 的命令是 `update-index`命令来创建 index ：
+
+{% highlight bash %}
+$ git update-index --add --cacheinfo 100644 d670460b4b4aece5915caf5c68d12f560a9fe3e4 test.txt
+{% endhighlight %}
+
+由于`test.txt`不在暂存区域中，加上`--add`参数，`--cacheinfo`参数表示直接将数据插入暂存区域中，并需要指定 \<mode\> \<object\> \<path\>。本例中，模式`100644`表示普通文件（`100755`表示可执行文件，`120000`表示符号链接）。
+
+用`write-tree`命令可以将暂存区域中的内容写入 tree 对象。如果目标 tree 不存在，`write-tree`命令会自动创建一个。
+
+{% highlight bash %}
+$ git write-tree
+80865964295ae2f11d27383e5f9c0b58a8ef21da
+$ git cat-file -p 80865964295ae2f11d27383e5f9c0b58a8ef21da
+100644 blob d670460b4b4aece5915caf5c68d12f560a9fe3e4 test.txt
+$ git cat-file -t 80865964295ae2f11d27383e5f9c0b58a8ef21da
+tree
+{% endhighlight %}
+
+可以看出，确实是一个 tree 对象，存储着一个指向 blob 对象的指针。
+
+接下来，将 test.txt 的最新版本和一个新文件 new.txt 暂存并创建一个新 tree 对象：
+
+{% highlight bash %}
+$ echo "new file" > new.txt
+$ git update-index --add new.txt
+$ git update-index test.txt
+$ git write-tree
+ea162a0d432d2352dec117377c718d10791918f5
+$ git cat-file -p ea162a0d432d2352dec117377c718d10791918f5
+100644 blob fa49b077972391ad58037050f2a75f74e3671e92 new.txt
+100644 blob 2c6f5b15d2c42d7e2068aa2aeddef1c6ea025b4d test.txt
+{% endhighlight %}
+
+这一个 tree 对象包含了两个记录，并且 test.txt 的 SHA-1 值是之前最后添加时的值`2c6f5b`。再做一个操作，将上一个 tree 对象作为子目录加入到这个 tree 对象的记录中，可以用`read-tree`命令：
+
+{% highlight bash %}
+$ git read-tree --prefix=bak 80865964295ae2f11d27383e5f9c0b58a8ef21da
+$ git write-tree
+531c19905cbc3be29d5ed579d3307faf5149c1f6
+$ git cat-file -p 531c19905cbc3be29d5ed579d3307faf5149c1f6
+040000 tree 80865964295ae2f11d27383e5f9c0b58a8ef21da bak
+100644 blob fa49b077972391ad58037050f2a75f74e3671e92 new.txt
+100644 blob 2c6f5b15d2c42d7e2068aa2aeddef1c6ea025b4d test.txt
+{% endhighlight %}
+
+`--prefix`参数可以将一个已有的 tree 对象作为子 tree 读到暂存区域中。然后再进行`git write-tree`。此时新建的 tree 对象包含两个 blob 对象和一个子 tree 对象，该子 tree 中的文件是 test.txt 的早先版本。
+
+#### commit 对象
