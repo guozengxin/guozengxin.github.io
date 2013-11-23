@@ -1,20 +1,12 @@
-_site/*
-_theme_packages/*
+.o
+.pyc
 
-Thumbs.db
-.DS_Store
-
-!.gitkeep
 
 .rbenv-version
 .rvmrc
-.o
-.pyc
 .so
-code/.o
-*/.o
-*/.so
-*/.pyc
-*/*/.o
-*/*/.so
-*/*/.pyc
+
+_site/*
+_theme_packages/*
+Thumbs.db
+.DS_Store
