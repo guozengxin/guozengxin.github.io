@@ -10,7 +10,7 @@ tags: [git, git对象, 版本控制, Pro Git]
 ### 系列文章
 
 [git基本原理（一）目录结构与对象](/git/2013/09/25/git-basic-principle-1/) <br/>
-[git基本原理（二）引用和打包](/git/2013/09/25/git-basic-principle-2/)
+[git基本原理（二）引用和打包](/git/2013/10/13/git-basic-principle-2/)
 
 ### 简介
 
