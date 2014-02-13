@@ -49,9 +49,10 @@
     {% if page.category %}
     <section>
     <h3>Category</h3>
-    <span class="category">
-      {{ page.category }}
-    </span>
+    <ul class="tag_box">
+	  {% assign categories_list = page.categories %}  
+	  {% include JB/categories_list %}  
+    </ul>
     </section>
       <hr></hr>
     {% endif %}

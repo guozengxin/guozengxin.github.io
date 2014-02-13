@@ -8,6 +8,6 @@
 
       {% include custom/asides/recently_visitors %}
 
-      {% include custom/asides/blogroll %}
+      <!-- {% include custom/asides/blogroll %}
 
-      {% include custom/asides/links %}
+      {% include custom/asides/links %} -->
