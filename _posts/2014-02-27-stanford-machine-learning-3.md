@@ -203,6 +203,4 @@ $$ \\color{black}{\\begin{align}
 
 1. 斯坦福大学公开课--机器学习课程: <http://v.163.com/special/opencourse/machinelearning.html>
 2. 课程课件下载地址: <http://cimg3.163.com/edu/open/ocw/jiqixuexikecheng.zip>
-3. logistic模型: <http://zh.wikipedia.org/wiki/Logit%E6%A8%A1%E5%9E%8B>
-4. Softmax回归: <http://ufldl.stanford.edu/wiki/index.php/Softmax%E5%9B%9E%E5%BD%92>
-5. 广义线性模型: <http://zh.wikipedia.org/wiki/%E5%BB%A3%E7%BE%A9%E7%B7%9A%E6%80%A7%E6%A8%A1%E5%BC%8F>
+3. 朴素贝叶斯分类器: <http://zh.wikipedia.org/zh-cn/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8>
