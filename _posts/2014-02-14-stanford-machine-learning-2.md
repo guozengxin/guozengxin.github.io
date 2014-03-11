@@ -283,8 +283,8 @@ $$ \\color{black}{ l(\\theta) = \\sum\_{i=1}\^m log p\\left( y\^{(i)}|x\^{(i)}; 
 
 ### 参考
 
-- 斯坦福大学公开课--机器学习课程: <http://v.163.com/special/opencourse/machinelearning.html>
-- 课程课件下载地址: <http://cimg3.163.com/edu/open/ocw/jiqixuexikecheng.zip>
-- logistic模型: <http://zh.wikipedia.org/wiki/Logit%E6%A8%A1%E5%9E%8B>
-- Softmax回归: <http://ufldl.stanford.edu/wiki/index.php/Softmax%E5%9B%9E%E5%BD%92>
-- 广义线性模型: <http://zh.wikipedia.org/wiki/%E5%BB%A3%E7%BE%A9%E7%B7%9A%E6%80%A7%E6%A8%A1%E5%BC%8F>
+1. 斯坦福大学公开课--机器学习课程: <http://v.163.com/special/opencourse/machinelearning.html>
+2. 课程课件下载地址: <http://cimg3.163.com/edu/open/ocw/jiqixuexikecheng.zip>
+3. logistic模型: <http://zh.wikipedia.org/wiki/Logit%E6%A8%A1%E5%9E%8B>
+4. Softmax回归: <http://ufldl.stanford.edu/wiki/index.php/Softmax%E5%9B%9E%E5%BD%92>
+5. 广义线性模型: <http://zh.wikipedia.org/wiki/%E5%BB%A3%E7%BE%A9%E7%B7%9A%E6%80%A7%E6%A8%A1%E5%BC%8F>
