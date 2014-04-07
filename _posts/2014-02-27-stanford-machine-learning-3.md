@@ -81,35 +81,35 @@ $$ \\color{black}{\\mu = \\left[ \\begin{matrix} 1 \\\\ 0 \\end{matrix}\\right];
 
 当在分类问题中，输入的特征变量x是一个连续的随机变量时，我们就可以使用GDA模型，假设p(x|y)服从多元正态分布，这个模型为：
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 y \&\\sim Bernoulli(\\phi) \\\\
 x|y=0 \&\\sim N(\\mu\_0, \\Sigma) \\\\
 x|y=1 \&\\sim N(\\mu\_1, \\Sigma) \\\\
-\\end{align}} $$
+\\end{align\*}} $$
 
 写出分布函数：
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 p(y) \&= \\phi\^y (1-\\phi)\^{1-y} \\\\
 p(x|y=0) \&= \\frac {1}{(2\\pi)\^{n/2}\\left|\\Sigma\\right|\^{1/2}} \\exp \\left(-\\frac {1}{2} (x-\\mu\_0)\^T \\Sigma\^{-1}(x-\\mu\_0)\\right)\\\\
 p(x|y=1) \&= \\frac {1}{(2\\pi)\^{n/2}\\left|\\Sigma\\right|\^{1/2}} \\exp \\left(-\\frac {1}{2} (x-\\mu\_1)\^T \\Sigma\^{-1}(x-\\mu\_1)\\right)\\\\
-\\end{align}} $$
+\\end{align\*}} $$
 
 这里，两个高斯分布使用的是相同的方差，不同的均值，模型的参数有$ \\color{black}{\\phi, \\Sigma, \\mu\_0, \\mu\_1} $，其似然函数如下：
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 l(\\phi,\\mu\_0,\\mu\_1,\\Sigma) \&= \\log \\prod\_{i=1}\^m p\\left(x\^{(i)},y\^{(i)};\\phi,\\mu\_0,\\mu\_1,\\Sigma,\\right) \\\\
  \&= \\log \\prod\_{i=1}\^m p\\left(x\^{(i)} | y\^{(i)};\\mu\_0,\\mu\_1,\\Sigma\\right) p(y\^{(i)};\\phi)
-\\end{align}} $$
+\\end{align\*}} $$
 
 求解过程忽略，最大似然函数的解为：
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 \\phi \&= \\frac{1}{m}\\sum\_{i=1}\^m 1\\{y\^{(i)} = 1\\} \\\\
 \\mu\_0 \&= \\frac{\\sum\_{i=1}\^m 1\\{y\^{(i)} = 0\\}x\^{(i)}}{\\sum\_{i=1}\^m 1\\{y\^{(i)} = 0\\}} \\\\
 \\mu\_1 \&= \\frac{\\sum\_{i=1}\^m 1\\{y\^{(i)} = 1\\}x\^{(i)}}{\\sum\_{i=1}\^m 1\\{y\^{(i)} = 1\\}} \\\\
 \\Sigma \&= \\frac{1}{m}\\sum\_{i=1}\^m \\left(x\^{(i)}-\\mu\_{y\^{(i)}}\\right) \\left(x\^{(i)}-\\mu\_{y\^{(i)}}\\right)\^T
-\\end{align}} $$
+\\end{align\*}} $$
 
 ![高斯判别分析模型示例](/assets/images/machine-learing/ml3-5.jpg)
 
@@ -139,11 +139,11 @@ p(y=1|x;\\phi,\\mu\_0,\\mu\_1,\\Sigma) = \\frac{1}{1+\\exp(-\\theta\^T x)}
 
 在这个假设下有：
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 p(x\_1, ... , x\_{50000}|y) \&= p(x\_1|y)p(x\_2|y, x1)\\cdots p(x\_{50000}|y, x\_1,...,x\_{49999}) \\\\
  \&= p(x\_1|y)p(x\_2|y)\\cdots p(x\_{50000}|y) \\\\
  \&= \\prod\_{i=1}\^{n} p(x\_i|y)
-\\end{align}} $$
+\\end{align\*}} $$
 
 和往常一样，对于训练集$ \\color{black}{\\left(x\^{(i)}, y\^{(i)}\\right); i=1,...,m} $, 写出上式的似然函数：
 
@@ -151,18 +151,18 @@ $$ \\color{black}{L(\\phi\_y, \\phi\_{i|y=0}, \\phi\_{i|y=1})} $$
 
 给出各参数的似然估计：
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 \\phi\_{j|y=1} \&= \\frac {\\sum\_{i=1}\^m 1\\{x\_j\^{(i)}=1 \\land y\^{(i)} = 1\\}} {\\sum\_{i=1}\^m 1 \\{y\^{(i)} = 1\\}} \\\\
 \\phi\_{j|y=0} \&= \\frac {\\sum\_{i=1}\^m 1\\{x\_j\^{(i)}=1 \\land y\^{(i)} = 0\\}} {\\sum\_{i=1}\^m 1 \\{y\^{(i)} = 0\\}} \\\\
 \\phi\_y \&= \\frac {\\sum\_{i=1}\^m 1\\{y\^{(i)} = 1\\}} {m} \\\\
-\\end{align}} $$
+\\end{align\*}} $$
 
 得到这些参数之后，用以下的公式计算一封新的邮件是否是垃圾邮件。
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 p(y=1|x) \&= \\frac {p(x|y=1)p(y=1)} {p(x)} \\\\
  \&= \\frac {\\left(\\prod\_{i=1}\^n p(x\_i|y=1)\\right)p(y=1)} {\\left(\\prod\_{i=1}\^n p(x\_i|y=1)\\right)p(y=1) + \\left(\\prod\_{i=1}\^n p(x\_i|y=0)\\right)p(y=0)}
-\\end{align}} $$
+\\end{align\*}} $$
 
 #### 拉普拉斯平滑
 
@@ -170,17 +170,17 @@ p(y=1|x) \&= \\frac {p(x|y=1)p(y=1)} {p(x)} \\\\
 
 拉普拉斯平滑是为了解决以下问题：当采用朴素贝叶斯对训练集建立了一个分类模型后，来了一封新的邮件是NIPS会议的邮件，其中有一个单词"nips"，但是这是收到的第一封NIPS会议的邮件，之前的训练集中从来没有出现过"nips"这个单词。假设"nips"这个单词是字典中的第35000个单词，模型中相关的参数就为：
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 \\phi\_{35000|y=1} \& = \\frac {\\sum\_{i=1}\^m 1\\{x\_{35000}\^{(i)}=1 \\land y\^{(i)} = 1\\}}{\\sum\_{i=1}\^m 1 \\{y\^{(i)} = 1\\}} = 0 \\\\
 \\phi\_{35000|y=0} \& = \\frac {\\sum\_{i=1}\^m 1\\{x\_{35000}\^{(i)}=1 \\land y\^{(i)} = 0\\}}{\\sum\_{i=1}\^m 1 \\{y\^{(i)} = 0\\}} = 0 \\\\
-\\end{align}} $$
+\\end{align\*}} $$
 
 因为"nips"这个单词从来没有出现过，所以得到的参数都为0. 从而，得到这封邮件的概率值：
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 p(y=1|x) \&= \\frac {\\left(\\prod\_{i=1}\^n p(x\_i|y=1)\\right)p(y=1)} {\\left(\\prod\_{i=1}\^n p(x\_i|y=1)\\right)p(y=1) + \\left(\\prod\_{i=1}\^n p(x\_i|y=0)\\right)p(y=0)} \\\\
  \&= \\frac {0}{0} 
-\\end{align}} $$
+\\end{align\*}} $$
 
 这将会使无法对这封邮件进行预测。出现这种结果的原因是我们做了不准确的假设：某个单词没有在训练集中出现过，我们就假设它出现的概率为0. 怎么解决呢？对于一个随机变量z，它的范围是$ \\color{black}{\\{1,2,3,\\ldots,k\\}} $，多项式参数是$ \\color{black}{\\phi\_i = p(z=i)} $经过m次试验后的预测结果$ \\color{black}{\\{z\^{(1)},z\^{(2)},z\^{(3)},\\ldots,z\^{(m)}\\}} $，概率的极大似然估计为
 
@@ -194,10 +194,10 @@ $$\\color{black}{\\phi\_j = \\frac{\\sum\_{i=1}\^m 1\\{z\^{(i)}=j\\} + 1} {m + k
 
 在朴素贝叶斯算法中，应用拉普拉斯平滑：
 
-$$ \\color{black}{\\begin{align}
+$$ \\color{black}{\\begin{align\*}
 \\phi\_{j|y=1} \&= \\frac {\\sum\_{i=1}\^m 1\\{x\_j\^{(i)}=1 \\land y\^{(i)} = 1\\} + 1} {\\sum\_{i=1}\^m 1 \\{y\^{(i)} = 1\\} + 2} \\\\
 \\phi\_{j|y=0} \&= \\frac {\\sum\_{i=1}\^m 1\\{x\_j\^{(i)}=1 \\land y\^{(i)} = 0\\} + 1} {\\sum\_{i=1}\^m 1 \\{y\^{(i)} = 0\\} + 2} \\\\
-\\end{align}} $$
+\\end{align\*}} $$
 
 ### 参考
 

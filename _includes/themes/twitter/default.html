@@ -19,15 +19,21 @@
 	<script type="text/x-mathjax-config">
 		MathJax.Hub.Config({
 			tex2jax: {
-				inlineMath: [['$','$'], ['\\(','\\)']]
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+			},
+			TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}}
+		});
+		MathJax.Hub.Queue(function() {
+			var all = MathJax.Hub.getAllJax(), i;
+			for(i=0; i < all.length; i += 1) {
+				all[i].SourceElement().parentNode.className += ' has-jax';
 			}
 		});
 	</script>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<!-- for machjax and pygment conflict -->
+	<style type="text/css">.MathJax .mi, .MathJax .mo, .MathJax .mtext { color: #111; }</style>
 
     <!-- Le styles -->
     <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
