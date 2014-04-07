@@ -168,3 +168,11 @@ section:hover {
 	border:1px solid rgba(0,0,0,0.35);
 	box-shadow:1px 2px 2px rgba(0,0,0,0.167);
 }
+
+.has-jax {
+	font: inherit; 
+	font-size: 100%; 
+	font-color: black;
+	background: inherit; 
+	border: inherit;
+}
