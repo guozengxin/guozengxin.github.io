@@ -1,12 +1,14 @@
-.o
-.pyc
+# expand file
+*.rbenv-version
+*.rvmrc
+*.so
+*.o
+*.pyc
+.DS_Store
 
-
-.rbenv-version
-.rvmrc
-.so
-
+# ignore temp directories
 _site/*
 _theme_packages/*
+
+# ignore files
 Thumbs.db
-.DS_Store
