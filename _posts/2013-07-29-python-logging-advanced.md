@@ -5,7 +5,6 @@ description: "python语言logging模块的进阶用法，handler, filter, logger
 category: python
 tags: [python, logging]
 ---
-{% include JB/setup %}
 
 ### OverView
 

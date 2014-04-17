@@ -3,7 +3,7 @@
         <span class="tag_box">
           <ul>
           {% assign categories_list = site.categories %}
-          {% include JB/categories_list %} 
+          {% include categories_list %} 
           </ul>
         </span>
       </section>

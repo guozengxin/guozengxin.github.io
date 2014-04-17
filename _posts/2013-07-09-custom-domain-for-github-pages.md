@@ -5,7 +5,6 @@ description: "利用jekyll及github可以快速建立个人站点。如果不想
 category: blog
 tags: [个人域名, github]
 ---
-{% include JB/setup %}
 
 1. 利用jekyll及github可以快速建立个人站点。如果不想用github默认的username.github.io这个域名的话，可以增加自己的域名。
 2. 本篇是用jekyll创建的第一篇文章，作为简单练习

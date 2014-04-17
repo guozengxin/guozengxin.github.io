@@ -5,7 +5,6 @@ description: "斯坦福大学的机器学习公开课学习笔记。"
 category: machine-learning
 tags: [机器学习, logistic回归, 广义线性模型, GLM, 指数族分布]
 ---
-{% include JB/setup %}
 
 ### 介绍
 

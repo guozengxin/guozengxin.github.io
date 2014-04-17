@@ -3,11 +3,10 @@ layout: post
 title: "机器学习课程总结（五）"
 description: "机器学习课程笔记第5篇，总结核的相关知识、L1软间隔分类器，SMO算法。"
 category: machine-learning
-tags: [机器学习, SVM]
+tags: [机器学习, SVM, 核, Kernel, 软间隔分类器, SMO]
 ---
-{% include JB/setup %}
 
-### 介绍
+### 简介
 
 机器学习课程笔记的第五篇。首先介绍了**核**的相关技术以及在SVM中的运用；然后简单介绍了**L1软间隔分类器**，使SVM算法能适应非线性可分的数据集；最后讲解了一个有效的SVM实现算法：**顺序最小优化算法**。
 

@@ -1,0 +1,4 @@
+{% include asides/categories %}
+{% include asides/recently_posts %}
+{% include asides/recently_comments %}
+{% include asides/recently_visitors %}

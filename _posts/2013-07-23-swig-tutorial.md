@@ -5,7 +5,6 @@ description: "通过swig，可以在tcl, perl, python, java, c#中执行c函数�
 category: swig
 tags: [C++, Python, swig]
 ---
-{% include JB/setup %}
 
 ### OverView
 

@@ -5,7 +5,6 @@ description: ""
 category: git
 tags: [git, References, 版本控制, Pro Git, Packfiles]
 ---
-{% include JB/setup %}
 
 ### 系列文章
 
