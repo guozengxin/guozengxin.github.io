@@ -1,8 +1,151 @@
 /* custom container */
+
+html {
+	background: #252525;
+}
+
 body {
-	/*font-family: "Hiragino Sans GB", "Microsoft YaHei", sans-serif;*/
 	font-family: arial, sans-serif; 
-	/*font-family: Tahoma, Helvetica, Arial, sans-serif;*/
+	max-width: 1210px;
+	padding: 0;
+	relative: relative;
+	margin: 0 auto;
+	background: #edeff4;
+	color: #222;
+}
+
+body>header, body>nav {
+	padding-left: 35px;
+	padding-right: 35px;
+}
+
+body>header {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	background: #263347;
+	font-size: 1.3em;
+}
+
+body>header h1 {
+	display: inline-block;
+	margin: 0px;
+	font-size: 2.2em;
+	line-height: 1.2em;
+}
+
+body>header h1 a {
+	color: #f2f2f2;
+	text-decoration: none;
+	cursor: auto;
+}
+
+body>header h2 {
+	margin: .2em 0 0;
+	font-size: 1em;
+	color: #bac7da;
+}
+
+body>header h1, h2 {
+	font-family: "PT Serif","Georgia","Helvetica Neue",Arial,sans-serif;
+	font-weight: normal;
+}
+
+body>header h1 a,
+body>header h1 a:visited,
+body>header h1 a:hover {
+	color: #f2f2f2;
+	text-decoration: none;
+}
+
+a {
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	-o-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-rendering: optimizelegibility;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+body>nav {
+	font-size: 0.9em;
+	position: relative;
+	background-color: #ccc;
+	background: linear-gradient(#e0e0e0,#cccccc,#b0b0b0);
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #8c8c8c;
+	padding-top: .35em;
+	padding-bottom: .35em;
+}
+
+body>nav:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+body>nav ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	display: block;
+	float: left;
+	padding-top: .15em;
+}
+
+body>nav ul li {
+	list-style-image: none;
+	list-style-type: none;
+	white-space: nowrap;
+	display: inline;
+}
+
+body>nav ul li:first-child,
+body>nav ul li:first {
+	padding-left: 0;
+}
+
+body>nav a:hover{
+	color: #2b2b2b;
+	text-decoration: none;
+}
+
+body>nav a:visited {
+	color: #6b6b6b;
+}
+
+body>nav a {
+	color: #6b6b6b;
+	font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
+	text-shadow: #ebebeb 0 1px;
+	text-decoration: none;
+	font-size: 1.4em;
+	font-weight: normal;
+	padding: .1em 0;
+	line-height: 1.5em;
+}
+
+body>nav li+li {
+	border-left: 1px solid #b0b0b0;
+	margin-left: .8em;
+}
+
+body>nav li+li a {
+	padding-left: .8em;
+	border-left: 1px solid #dedede;
+}
+
+body>nav ul.social {
+	margin-left: .8em;
+	float: right;
+}
+
+.index-body {
+	margin-top: 40px;
 }
 
 .container-narrow {
