@@ -5,7 +5,6 @@ description: "dd命令是Linux下操作磁盘的命令，可以进行数据拷�
 category: linux
 tags: [linux, unix, dd]
 ---
-{% include JB/setup %}
 
 ### 简介
 

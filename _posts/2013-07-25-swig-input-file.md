@@ -5,7 +5,6 @@ description: "使用swig将C或C++语言编译为其他类型语言的时候，�
 category: swig
 tags: [C++, swig, Python]
 ---
-{% include JB/setup %}
 
 ### Overview
 

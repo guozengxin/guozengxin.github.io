@@ -5,7 +5,6 @@ description: "crontab中的环境变量是与当前用户环境不一致的，�
 category: linux
 tags: [linux, crontab, 环境变量]
 ---
-{% include JB/setup %}
 
 ### Question
 

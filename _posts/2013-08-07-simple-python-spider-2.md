@@ -5,7 +5,6 @@ description: "用python语言开发一个简单的spider系统。本篇介绍下
 category: python
 tags: [python, spider, 网页抓取, 爬虫, downloader]
 ---
-{% include JB/setup %}
 
 ### 简介
 

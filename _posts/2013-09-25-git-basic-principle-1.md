@@ -5,7 +5,6 @@ description: "文章介绍git的底层原理和具体的实现方式，对这些
 category: git
 tags: [git, git对象, 版本控制, Pro Git]
 ---
-{% include JB/setup %}
 
 ### 系列文章
 

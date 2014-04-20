@@ -5,7 +5,6 @@ description: "python语言中可以使用struct模块对二进制数据进行操
 category: python
 tags: [python, struct, pack, unpack]
 ---
-{% include JB/setup %}
 
 ### OverView
 

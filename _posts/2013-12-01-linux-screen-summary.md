@@ -5,7 +5,6 @@ description: "在linux下使用了screen命令之后，感觉这个命令确实�
 category: linux
 tags: [linux, screen]
 ---
-{% include JB/setup %}
 
 ### 什么是 screen 
 

@@ -1,0 +1,2 @@
+{% include asides/categories %}
+{% include asides/recently_posts %}
