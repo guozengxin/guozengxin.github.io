@@ -5,7 +5,6 @@ description: ""
 category: hadoop
 tags: [pig, hadoop, 传参]
 ---
-{% include JB/setup %}
 
 ### 直接传参
 

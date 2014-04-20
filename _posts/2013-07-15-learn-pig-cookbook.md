@@ -5,7 +5,6 @@ description: "pic cookbook学习"
 category: hadoop
 tags: [pig, hadoop]
 ---
-{% include JB/setup %}
 
 ### Overview
 

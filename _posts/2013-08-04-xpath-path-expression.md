@@ -5,7 +5,6 @@ description: "xpath的路径表达式有着丰富的技巧，通过巧妙的组�
 category: xml
 tags: [xml, xpath, 路径表达式]
 ---
-{% include JB/setup %}
 
 ### OverView
 

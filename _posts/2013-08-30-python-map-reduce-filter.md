@@ -5,7 +5,6 @@ description: "python中有很多设计巧妙且实用的函数，能极大的减
 category: python
 tags: [python, filter, map, reduce]
 ---
-{% include JB/setup %}
 
 ### 简介
 
