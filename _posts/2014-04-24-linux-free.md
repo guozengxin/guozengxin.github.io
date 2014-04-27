@@ -18,6 +18,8 @@ Linux系统中的[free](http://linux.die.net/man/1/free)命令是一个查看系
 	-/+ buffers/cache:    3293756   13038520
 	Swap:      4194296       9588    4184708
 
+<!-- more -->
+
 #### 第二行
 
 free的输出共有4行，第二行的输出是从操作系统角度来看的，在这一行中：
