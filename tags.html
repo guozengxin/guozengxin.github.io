@@ -7,8 +7,7 @@ group: navigation
 {% include setup %}
 
 <ul class="tag_box inline">
-  {% assign tags_list = site.tags %}  
-  {% include tags_list %}
+  {% include tags_list.html tags_list = site.tags %}
 </ul>
 
 

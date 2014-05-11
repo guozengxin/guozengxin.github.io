@@ -1,0 +1,5 @@
+{% capture date %}{{ page.date }}{% endcapture %}
+<section>
+  <h4>发表时间</h4>
+  <span class="date"><time datetime="{{ date | datetime | date_to_xmlschema }}">{{ date | date: "%Y年%m月%d日"}}</time></span>
+</section>

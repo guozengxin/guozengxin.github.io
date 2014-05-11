@@ -1,0 +1,10 @@
+{% if page.path contains "_posts" %}
+  {% include asides/postdate.html %}
+  {% include asides/recently_posts %}
+  {% include asides/related_posts %}
+  {% include asides/tags.html %}
+{% else %}
+  {% include asides/related_posts %}
+  {% include asides/categories.html %}
+{% endif %}
+

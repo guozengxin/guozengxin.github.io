@@ -1,0 +1,10 @@
+{% for tag in include.tags_list %} 
+  {% if tag[0] == null %}
+    {% assign tagname = tag %}
+    {% assign tagsize = site.tags[tag].size %}
+  {% else %}
+    {% assign tagname = tag[0] %}
+    {% assign tagsize = tag[1].size %}
+  {% endif %}
+  <li><a href="{{ BASE_PATH }}{{ site.tags_path }}#{{ tagname }}-ref">{{ tagname }} <span>{{ tagsize }}</span></a></li>
+{% endfor %}

@@ -10,8 +10,6 @@ tags: [python, logging]
 
 在进行软件开发时，一个重要的工作就是打日志。在其他语言中，会有各种第三方日志组件，如log4net，log4cpp等。但python语言自带有一个强大的日志模块: logging。支持日志的分发，设置日志级别，设置日志格式等。现在python的日志模块做简要介绍并说明简单用法。
 
-下一篇文章，将会介绍一些关于[logging模块的进阶用法](/python/2013/07/29/python-logging-advanced/)。
-
 先看一个简单示例。我在最初了解logging模块时，都是这样简单进行设置。
 
 {% highlight python %}
