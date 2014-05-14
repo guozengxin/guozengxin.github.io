@@ -98,14 +98,14 @@ a {
 }
 
 html {
-  background: #252525 url('../images/line-tile.png?1399777193') top left;
+  background: #252525 url('../images/line-tile.png?1399818943') top left;
 }
 
-body > div {
+body > div#main {
   background: #edeff4 url('../images/noise.png?1397966579') top left;
   border-bottom: 1px solid #bfbfbf;
 }
-body > div > div {
+body > div#main > div {
   background: #f8f8f8 url('../images/noise.png?1397966579') top left;
   border-right: 1px solid #dadde3;
 }
@@ -815,7 +815,7 @@ body > nav ul {
 }
 
 .no-placeholder body > nav .search {
-  background: #f2f2f2 url('../images/search.png?1399777202') 0.3em 0.25em no-repeat;
+  background: #f2f2f2 url('../images/search.png?1399818943') 0.3em 0.25em no-repeat;
   text-indent: 1.3em;
 }
 
@@ -846,11 +846,11 @@ body > nav ul {
   padding: 0;
 }
 .maskImage a[rel=subscribe-rss], .maskImage a[rel=subscribe-rss]:after {
-  -webkit-mask-image: url('../images/rss.png?1399777208');
-  -moz-mask-image: url('../images/rss.png?1399777208');
-  -ms-mask-image: url('../images/rss.png?1399777208');
-  -o-mask-image: url('../images/rss.png?1399777208');
-  mask-image: url('../images/rss.png?1399777208');
+  -webkit-mask-image: url('../images/rss.png?1399818943');
+  -moz-mask-image: url('../images/rss.png?1399818943');
+  -ms-mask-image: url('../images/rss.png?1399818943');
+  -o-mask-image: url('../images/rss.png?1399818943');
+  mask-image: url('../images/rss.png?1399818943');
   -webkit-mask-repeat: no-repeat;
   -moz-mask-repeat: no-repeat;
   -ms-mask-repeat: no-repeat;
@@ -878,11 +878,11 @@ body > nav ul {
   padding: 0;
 }
 .maskImage a[rel=subscribe-email], .maskImage a[rel=subscribe-email]:after {
-  -webkit-mask-image: url('../images/email.png?1399777223');
-  -moz-mask-image: url('../images/email.png?1399777223');
-  -ms-mask-image: url('../images/email.png?1399777223');
-  -o-mask-image: url('../images/email.png?1399777223');
-  mask-image: url('../images/email.png?1399777223');
+  -webkit-mask-image: url('../images/email.png?1399818943');
+  -moz-mask-image: url('../images/email.png?1399818943');
+  -ms-mask-image: url('../images/email.png?1399818943');
+  -o-mask-image: url('../images/email.png?1399818943');
+  mask-image: url('../images/email.png?1399818943');
   -webkit-mask-repeat: no-repeat;
   -moz-mask-repeat: no-repeat;
   -ms-mask-repeat: no-repeat;
@@ -1546,7 +1546,7 @@ figure.code .highlight {
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px;
   font-family: "Helvetica Neue", Arial, "Lucida Grande", "Lucida Sans Unicode", Lucida, sans-serif;
-  background: #aaaaaa url('../images/code_bg.png?1399777239') top repeat-x;
+  background: #aaaaaa url('../images/code_bg.png?1399818943') top repeat-x;
   border: 1px solid #565656;
   border-top-color: #cbcbcb;
   border-left-color: #a5a5a5;

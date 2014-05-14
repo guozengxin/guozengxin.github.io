@@ -1,21 +1,20 @@
 ---
 layout: page
-title: Categories
-header: Posts By Category
+title: Blog Archive
+footer: false
 group: navigation
 ---
-{% include setup %}
 
-<ul class="tag_box inline">
-  {% include categories_list.html categories_list = site.categories %}
-</ul>
-
-
+<div id="blog-archives" class="category">
+{% assign footer_content = "tag" %}
 {% for category in site.categories %} 
-  <h2 class="anchor" id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
-  <ul>
-    {% assign pages_list = category[1] %}  
-    {% include pages_list %}
-  </ul>
+  {% capture categoryname %}{{ category[0] | downcase}}{% endcapture %}
+  <h2><a id="{{ categoryname }}-ref"name="{{ categoryname }}">{{ categoryname }} </a></h2>
+  <p><br></p>
+  {% for post in category[1] %}
+    <article>
+      {% include archive_post.html %}
+    </article>
+  {% endfor %}
 {% endfor %}
-
+</div>

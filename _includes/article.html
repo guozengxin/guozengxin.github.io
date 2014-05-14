@@ -10,17 +10,22 @@
       <p class="meta">
         {% include post/date.html %}{{ time }}
         {% if site.comments.provider == "disqus" and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
-        | <a href="{% if index %}{{ BASE_PATH }}{{ post.url }}{% endif %}#disqus_thread">Comments</a>
-        {% endif %}
+          | <a href="{% if index %}{{ BASE_PATH }}{{ post.url }}{% endif %}#disqus_thread">评论</a>
       </p>
+        {% endif %}
     {% endunless %}
   </header>
   {% endunless %}
 
   {% if index %}
-    <div class="entry-content">{{ content | excerpt }}</div>
-    {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
-    {% if excerpted == 'true' %}
+    {% if post.content and post.content contains "<!-- more -->" %}
+      {% capture content %} {{ post.content | split:'<!-- more -->' | first }}{% endcapture %}
+      {% assign has_excerpt = true %}
+    {% else %}
+      {% capture content %} {{ post.content | strip_html }}{% endcapture %}
+    {% endif %}
+    <div class="entry-content">{{ content }}</div>
+    {% if has_excerpt %}
       <footer>
         <a rel="full-article" href="{{ BASE_PATH }}{{ post.url }}">详细&rarr;</a>
       </footer>
@@ -29,8 +34,6 @@
     <div class="entry-content">{{ content }}</div>
     <footer>
       <p class="meta">
-        {% include post/author.html %}
-        {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
         {% include post/categories.html %}
       </p>
       {% unless page.sharing == false %}

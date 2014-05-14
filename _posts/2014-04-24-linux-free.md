@@ -2,7 +2,7 @@
 layout: post
 title: "Linux系统free命令"
 description: "Linux系统下的free命令可以查看系统内存的使用情况"
-category: Linux
+category: linux
 tags: [Linux, 内存管理, free命令]
 ---
 

@@ -1,38 +1,38 @@
+# 站点设置(jekyll自带)
 permalink: /:categories/:year/:month/:day/:title 
-
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "code"]
 highlighter: pygments
 paginate: 8
 markdown: kramdown
 timezone: Asia/Shanghai
 
+# 站点设置(个人)
+disqus_show_comment_count: true
+recently_posts_limit: 6
+related_posts_limit: 6
 
-title : "Xiaoxin's Blog"
-tagline: KEEP THINKING
-description: 技术博客, 个人博客
-
-
-author :
-  name : xiaoxin
-  email : 
-  github : guozengxin
-  weibo: xdxiaoxin
-
+# 站点链接设置
 production_url : http://blog.guozengxin.cn
-
 BASE_PATH : false
 ASSET_PATH : /assets
-
 archive_path: /archive.html
 categories_path : /categories.html
 tags_path : /tags.html
 rss_path : /rss.xml
 atom_path : /atom.xml
 
-#一些设置
-index: true
+# 个人信息
+title : "Xiaoxin's Blog"
+tagline: KEEP THINKING
+description: 技术博客, 个人博客
+author :
+  name : xiaoxin
+  email : 
+  github : guozengxin
+  weibo: xdxiaoxin
 
-disqus_show_comment_count: true
+
+# 评论设置
 comments :
   provider : disqus
   disqus :
@@ -46,7 +46,8 @@ comments :
     num_posts: 5
     width: 580
     colorscheme: light
-   
+ 
+# 站点分析
 analytics :
   provider : google 
   google : 
