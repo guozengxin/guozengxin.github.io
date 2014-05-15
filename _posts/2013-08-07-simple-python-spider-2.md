@@ -4,6 +4,7 @@ title: "用python开发一个简易的spider(二)"
 description: "用python语言开发一个简单的spider系统。本篇介绍下载器及相关的东西。"
 category: python
 tags: [python, spider, 网页抓取, 爬虫, downloader]
+comments: true
 ---
 
 ### 简介

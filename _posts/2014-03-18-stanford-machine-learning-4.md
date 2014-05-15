@@ -4,6 +4,7 @@ title: "机器学习课程总结（四）"
 description: "机器学习课程笔记第4篇，总结SVM算法的相关概念和理论。"
 category: machine-learning
 tags: [机器学习, SVM, 支持向量机, 对偶问题, 函数间隔, 几何间隔]
+comments: true
 ---
 
 ### 介绍

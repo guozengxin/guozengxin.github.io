@@ -4,6 +4,7 @@ title: "python语言logging模块的进阶用法"
 description: "python语言logging模块的进阶用法，handler, filter, logger, formatter等类的用法"
 category: python
 tags: [python, logging]
+comments: true
 ---
 
 ### OverView

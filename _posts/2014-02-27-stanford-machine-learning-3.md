@@ -4,6 +4,7 @@ title: "机器学习课程总结（三）"
 description: "斯坦福大学的机器学习公开课学习笔记。本文主要介绍了生成学习算法, 朴素贝叶斯，拉普拉斯平滑。"
 category: machine-learning
 tags: [机器学习, 生成学习算法, 朴素贝叶斯, 拉普拉斯平滑, 多元正态分布]
+comments: true
 ---
 
 ### 介绍

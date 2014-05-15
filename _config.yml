@@ -8,11 +8,12 @@ timezone: Asia/Shanghai
 
 # 站点设置(个人)
 disqus_show_comment_count: true
+disqus_short_name: guozengxin
 recently_posts_limit: 6
 related_posts_limit: 6
 
 # 站点链接设置
-production_url : http://blog.guozengxin.cn
+url : http://blog.guozengxin.cn
 BASE_PATH : false
 ASSET_PATH : /assets
 archive_path: /archive.html
@@ -31,22 +32,6 @@ author :
   github : guozengxin
   weibo: xdxiaoxin
 
-
-# 评论设置
-comments :
-  provider : disqus
-  disqus :
-    short_name : guozengxin
-  livefyre :
-    site_id : 123
-  intensedebate :
-    account : 123abc
-  facebook :
-    appid : 123
-    num_posts: 5
-    width: 580
-    colorscheme: light
- 
 # 站点分析
 analytics :
   provider : google 

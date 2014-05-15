@@ -1,15 +1,14 @@
 ---
 layout: page
-title: Blog Archive
+title: 归档
 footer: false
-group: navigation
 ---
 
 <div id="blog-archives" class="category">
-{% assign footer_content = "tag" %}
+{% assign footer_content = "tags" %}
 {% for category in site.categories %} 
   {% capture categoryname %}{{ category[0] | downcase}}{% endcapture %}
-  <h2><a id="{{ categoryname }}-ref"name="{{ categoryname }}">{{ categoryname }} </a></h2>
+  <h2><a id="{{ categoryname }}-ref" name="{{ categoryname }}">{{ categoryname }} </a></h2>
   <p><br></p>
   {% for post in category[1] %}
     <article>

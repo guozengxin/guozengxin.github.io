@@ -4,6 +4,7 @@ title: "git基本原理（一）目录结构与对象"
 description: "文章介绍git的底层原理和具体的实现方式，对这些的理解对于了解git的应用和发现它的强大是非常有用的。本文将介绍git的底层命令和高层命令的分类，以及git对象的基本知识。"
 category: git
 tags: [git, git对象, 版本控制, Pro Git]
+comments: true
 ---
 
 ### 系列文章

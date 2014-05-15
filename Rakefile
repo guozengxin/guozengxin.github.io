@@ -66,6 +66,7 @@ task :post do
     post.puts 'description: ""'
     post.puts "category: "
     post.puts "tags: []"
+	post.puts "comments: true"
     post.puts "---"
   end
 end # task :post

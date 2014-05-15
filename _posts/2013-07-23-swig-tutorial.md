@@ -4,6 +4,7 @@ title: "swig入门介绍"
 description: "通过swig，可以在tcl, perl, python, java, c#中执行c函数，加快程序运行速度"
 category: swig
 tags: [C++, Python, swig]
+comments: true
 ---
 
 ### OverView

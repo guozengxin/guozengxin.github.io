@@ -4,6 +4,7 @@ title: "Linux系统free命令"
 description: "Linux系统下的free命令可以查看系统内存的使用情况"
 category: linux
 tags: [Linux, 内存管理, free命令]
+comments: true
 ---
 
 Linux系统中的[free](http://linux.die.net/man/1/free)命令是一个查看系统内存、交换区使用情况的命令。

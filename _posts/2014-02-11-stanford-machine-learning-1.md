@@ -4,6 +4,7 @@ title: "机器学习课程总结（一）"
 description: "斯坦福大学的机器学习公开课学习笔记。"
 category: machine-learning
 tags: [机器学习, 监督学习, 线性回归, 最小二乘法]
+comments: true
 ---
 
 ### 介绍

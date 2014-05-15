@@ -4,6 +4,7 @@ title: "机器学习课程总结（五）"
 description: "机器学习课程笔记第5篇，总结核的相关知识、L1软间隔分类器，SMO算法。"
 category: machine-learning
 tags: [机器学习, SVM, 核, Kernel, 软间隔分类器, SMO]
+comments: true
 ---
 
 ### 简介
