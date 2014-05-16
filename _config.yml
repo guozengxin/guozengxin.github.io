@@ -3,14 +3,18 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "code"]
 highlighter: pygments
 paginate: 8
-markdown: kramdown
 timezone: Asia/Shanghai
+
+# markdown设置
+markdown: kramdown
 
 # 站点设置(个人)
 disqus_show_comment_count: true
 disqus_short_name: guozengxin
 recently_posts_limit: 6
 related_posts_limit: 6
+google_tracking_id: 'UA-48443270-1'
+
 
 # 站点链接设置
 url : http://blog.guozengxin.cn
@@ -18,6 +22,7 @@ BASE_PATH : false
 ASSET_PATH : /assets
 archive_path: /archive.html
 categories_path : /categories.html
+about_path : /about.html
 tags_path : /tags.html
 rss_path : /rss.xml
 atom_path : /atom.xml

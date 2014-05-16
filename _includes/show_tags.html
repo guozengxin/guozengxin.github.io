@@ -1,0 +1,7 @@
+<span class="tags">标签:
+  {% for tag in include.tags %}
+    {% unless forloop.first %},{% endunless %}
+      <a class="tag" href="{{ BASE_PATH }}{{ site.tags_path }}#{{ tag }}-ref">{{ tag }}</a>
+  {% endfor %}
+</span>
+

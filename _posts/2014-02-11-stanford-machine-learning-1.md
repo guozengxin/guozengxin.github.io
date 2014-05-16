@@ -23,7 +23,7 @@ comments: true
 
 我们将通过样本来预测一个房子的价格，使价格作为房间大小的函数，这一过程就成为监督学习。
 
-上图中的房屋大小和房价信息被称为训练集（输入数据），用$\\color{black}{\\left\\{(x\^{(i)}, y\^{(i)}); i=1,2,\\ldots,m \\right\\}}$表示，其中，$\\color{black}{\\left(x\^{(i)}, y\^{(i)}\\right)}$被称为一个训练样本。即将预测的数据被成为目标（输出数据），用y表示。那么监督学习的目标就是，给出一个训练样本，求出一个方程h：$\\color{black}{y=h(x)}$，该方程也被称为一个假设。整个过程如下图所示：
+上图中的房屋大小和房价信息被称为训练集（输入数据），用$$\color{black}{\left\{(x^{(i)}, y^{(i)}); i=1,2,\ldots,m \right\}}$$表示，其中，$$\color{black}{\left(x^{(i)}, y^{(i)}\right)}$$被称为一个训练样本。即将预测的数据被成为目标（输出数据），用y表示。那么监督学习的目标就是，给出一个训练样本，求出一个方程h：$$\color{black}{y=h(x)}$$，该方程也被称为一个假设。整个过程如下图所示：
 
 ![监督学习过程描述](/assets/images/machine-learing/ml1-2.jpg)
 
@@ -33,41 +33,41 @@ comments: true
 
 线性回归的假设为：
 
-$$ \\color{black}{h\_\\theta (x)=\theta\_0 + \theta\_1 x\_1 + \\cdots + \\theta\_n x\_n} $$
+$$ \color{black}{h_\theta (x)=\theta_0 + \theta_1 x_1 + \cdots + \theta_n x_n} $$
 
-其中，$ \\color{black}{\\theta\_i} $ 称为参数。$ \\color{black}{x\_i} $ 代表特征数据，机器学习的目标就是从一些特征预测出所需要的值，例如在房价预测，房屋的大小就是特征。为了表示方便，假设$ \\color{black}{x\_0=1} $，上面的方程可以表示为：
+其中，$$ \color{black}{\theta_i} $$ 称为参数。$$ \color{black}{x_i} $$ 代表特征数据，机器学习的目标就是从一些特征预测出所需要的值，例如在房价预测，房屋的大小就是特征。为了表示方便，假设$$ \color{black}{x_0=1} $$，上面的方程可以表示为：
 
-$$ \\color{black}{h\_\\theta(x) = \\sum\_{i=0}\^n {\\theta\_i x\_i}} $$
+$$ \color{black}{h_\theta(x) = \sum_{i=0}^n {\theta_i x_i}} $$
 
-等号右边的 $\\color{black}{\\theta}$ 和 $\\color{black}{x}$ 均为向量，$\\color{black}{n}$表示输入变量（特征）的数量。
+等号右边的 $$\color{black}{\theta}$$ 和 $$\color{black}{x}$$ 均为向量，$$\color{black}{n}$$表示输入变量（特征）的数量。
 
-为了实现从训练集求出参数$\\color{black}{\\theta}$的目的，合理的目标就是对于训练集中的所有数据，做到 $ \\color{black}{h(x)} $ 尽可能的等$\\color{black}{y}$。下面的**成本函数**就是为了评价这一目标：
+为了实现从训练集求出参数$$\color{black}{\theta}$$的目的，合理的目标就是对于训练集中的所有数据，做到 $$ \color{black}{h(x)} $$ 尽可能的等$$\color{black}{y}$$。下面的**成本函数**就是为了评价这一目标：
 
-$$ \\color{black}{J(\\theta) = \\frac{1}{2} \\sum\_{i=1}\^m{\\left(h\_\\theta \\left(x\^{(i)}\\right) - y\^{(i)}\\right)\^2} } $$
+$$ \color{black}{J(\theta) = \frac{1}{2} \sum_{i=1}^m{\left(h_\theta \left(x^{(i)}\right) - y^{(i)}\right)^2} } $$
 
 这一目标函数和**普通最小二乘法**的成本函数相似。
 
 #### LMS算法（最小均方算法）
 
-现在我的目标是求出$\\color{black}{\\theta}$，并且使$ \\color{black}{J(\\theta)} $ 最小化。考虑**梯度下降算法**，给$\\color{black}{\\theta}$ 一个初始值，并重复的修改它的值，使 $ \\color{black}{J(\\theta)} $ 越来越小。
+现在我的目标是求出$$\color{black}{\theta}$$，并且使$$ \color{black}{J(\theta)} $$ 最小化。考虑**梯度下降算法**，给$$\color{black}{\theta}$$ 一个初始值，并重复的修改它的值，使 $$ \color{black}{J(\theta)} $$ 越来越小。
 
-$$ \\color{black}{\\theta\_j := \\theta\_j - \\alpha \\frac {\\partial}{\\partial \\theta\_j} J(\\theta) } $$
+$$ \color{black}{\theta_j := \theta_j - \alpha \frac {\partial}{\partial \theta_j} J(\theta) } $$
 
-这里的 $ \\color{black}{\\alpha} $ 称为学习速度，$ \\color{black}{\\alpha} $ 越大，算法收敛的越快，反之越慢。上式中对 $ \\color{black}{J(\\theta)} $ 求偏导之后（求解过程省略）：
+这里的 $$ \color{black}{\alpha} $$ 称为学习速度，$$ \color{black}{\alpha} $$ 越大，算法收敛的越快，反之越慢。上式中对 $$ \color{black}{J(\theta)} $$ 求偏导之后（求解过程省略）：
 
-$$ \\color{black}{\\frac {\\partial}{\\partial \\theta\_j} J(\\theta) = \\left( h\_\\theta (x) - y\\right) x\_j} $$
+$$ \color{black}{\frac {\partial}{\partial \theta_j} J(\theta) = \left( h_\theta (x) - y\right) x_j} $$
 
 那么更新方程变为：
 
-$$ \\color{black}{\\theta\_j := \\theta\_j + \\alpha \\left(y\^{(i)} - h\_\\theta \\left( x\^{(i)} \\right) \\right) x\_j\^{(i)} } $$
+$$ \color{black}{\theta_j := \theta_j + \alpha \left(y^{(i)} - h_\theta \left( x^{(i)} \right) \right) x_j^{(i)} } $$
 
-这个更新方程可以很直观的看出它的意义，对于**误差项** $\\color{black}{\\left( y\^{(i)} - h\_\\theta \\left( x\^{(i)} \\right) \\right)} $来说，如果一个样本根据假设得到的值和实际值相差很小，那么参数在下一步更新也很小，反之如果根据假设得到的值和实际值相差较大，那么下一步参数更新的幅度也较大。
+这个更新方程可以很直观的看出它的意义，对于**误差项** $$\color{black}{\left( y^{(i)} - h_\theta \left( x^{(i)} \right) \right)} $$来说，如果一个样本根据假设得到的值和实际值相差很小，那么参数在下一步更新也很小，反之如果根据假设得到的值和实际值相差较大，那么下一步参数更新的幅度也较大。
 
 衍生出多个样本的梯度下降算法：**批量梯度下降算法**
 
 >Repeat until covergence {
 
->    $ \\color{black}{\\theta\_j := \\theta\_j + \\alpha \\sum\_{i=1}\^{m} \\left( y\^{(i)} - h\_\\theta\\left( x\^{(i)} \\right) \\right) x\_j\^{(i)}} $
+>    $$ \color{black}{\theta_j := \theta_j + \alpha \sum_{i=1}^{m} \left( y^{(i)} - h_\theta\left( x^{(i)} \right) \right) x_j^{(i)}} $$
 
 >}
 
@@ -79,7 +79,7 @@ $$ \\color{black}{\\theta\_j := \\theta\_j + \\alpha \\left(y\^{(i)} - h\_\\thet
 
 >    for i=1 to m {
 
->   $ \\color{black}{\\theta\_j := \\theta\_j + \\alpha \\left(y\^{(i)} - h\_\\theta \\left( x\^{(i)} \\right) \\right) x\_j\^{(i)} } $        ( for every j)
+>   $$ \color{black}{\theta_j := \theta_j + \alpha \left(y^{(i)} - h_\theta \left( x^{(i)} \right) \right) x_j^{(i)} } $$        ( for every j)
 
 >    }
 
@@ -89,7 +89,7 @@ $$ \\color{black}{\\theta\_j := \\theta\_j + \\alpha \\left(y\^{(i)} - h\_\\thet
 
 在课程中，Andrew Ng 用矩阵运算回顾了最小二乘法，并直接求出参数的解：
 
-$$ \\color{black}{\\theta = \\left( X\^T X \\right)\^{-1} X\^T \overrightarrow {y} } $$
+$$ \color{black}{\theta = \left( X^T X \right)^{-1} X^T \overrightarrow {y} } $$
 
 教授用概率的方法对线性回归问题进行了解释，采用**最大似然估计**的方法可以得到与最小二乘法完全相同的成本函数。
 
@@ -101,13 +101,13 @@ $$ \\color{black}{\\theta = \\left( X\^T X \\right)\^{-1} X\^T \overrightarrow {
 
 直线的拟合并没有很好符合真实数据，第二幅图是一个二次函数的图形，它比直线较好的符合真实数据，但是还不是完全符合。最右边的图形是一个5次的函数，它很好的描述了真实的数据。这里有两个概念需要说明一下，**欠拟合**：模型没有很好的捕捉到训练数据的结构；**过拟合**：模型假设的过于复杂，对训练数据的捕捉很好，但是却没有真正描述真实世界中的数据结构。
 
-对于非线性的模型，一个合理的方法是使用**局部加权线性回归**算法，它假设所预测的点附近很短一段距离是符合线性的。在之前的线性回归模型中，我们的做法是：寻找合适的 $ \\color{black}{\\theta} $ 使 $ \\color{black}{\\sum\_i \\left( y\^{(i)} - \\theta\^T x\^{(i)} \\right)\^2} $ 最小。现在在局部加权线性回归模型中，需要寻找合适的 $ \\color{black}{\\theta} $ 使 $ \\color{black}{\\sum\_i w\^{(i)} \\left( y\^{(i)} - \\theta\^T x\^{(i)} \\right)\^2} $ 最小。这里，$ \\color{black}{w\^{(i)}} $ 是一个非负的权值，直观来看，$ \\color{black}{w\^{(i)}} $ 越大，对模型的影响越大，$ \\color{black}{w\^{(i)}} $ 越小，对模型的影响越小。通常用下面的函数：
+对于非线性的模型，一个合理的方法是使用**局部加权线性回归**算法，它假设所预测的点附近很短一段距离是符合线性的。在之前的线性回归模型中，我们的做法是：寻找合适的 $$ \color{black}{\theta} $$ 使 $$ \color{black}{\sum_i \left( y^{(i)} - \theta^T x^{(i)} \right)^2} $$ 最小。现在在局部加权线性回归模型中，需要寻找合适的 $$ \color{black}{\theta} $$ 使 $$ \color{black}{\sum_i w^{(i)} \left( y^{(i)} - \theta^T x^{(i)} \right)^2} $$ 最小。这里，$$ \color{black}{w^{(i)}} $$ 是一个非负的权值，直观来看，$$ \color{black}{w^{(i)}} $$ 越大，对模型的影响越大，$$ \color{black}{w^{(i)}} $$ 越小，对模型的影响越小。通常用下面的函数：
 
-$$ \\color{black}{w\^{(i)} = exp \\left( -\\frac {\\left( x\^{(i)} - x \\right)\^2} {2 \\tau\^2} \\right)} $$
+$$ \color{black}{w^{(i)} = exp \left( -\frac {\left( x^{(i)} - x \right)^2} {2 \tau^2} \right)} $$
 
-从这个函数中可以看出，如果 $ \\color{black}{\\left| x\^{(i)} - x \\right|} $ 越大，$ \\color{black}{w\^{(i)}} $ 越接近 1，反之如果$ \\color{black}{\\left| x\^{(i)} - x \\right|} $ 越小，$ \\color{black}{w\^{(i)}} $ 越接近 0。$ \\color{black}{\\tau} $ 称为波长参数，它反应了权值随距离下降的速率。
+从这个函数中可以看出，如果 $$ \color{black}{\lvert x^{(i)} - x \rvert} $$ 越大，$$ \color{black}{w^{(i)}} $$ 越接近 1，反之如果$$ \color{black}{\lvert x^{(i)} - x \rvert} $$ 越小，$$ \color{black}{w^{(i)}} $$ 越接近 0。$$ \color{black}{\tau} $$ 称为波长参数，它反应了权值随距离下降的速率。
 
-局部加权线性回归是一个**非参数学习算法**，相比而言，线性回归是一个**参数学习算法**，因为它需要求解一个固定且有限的参数 $ \\color{black}{\\theta\_i} $ ，而且求模型训练完成后就不再需要训练数据了。但局部加权线性回归在预测时始终需要训练数据来参与计算。
+局部加权线性回归是一个**非参数学习算法**，相比而言，线性回归是一个**参数学习算法**，因为它需要求解一个固定且有限的参数 $$ \color{black}{\theta_i} $$ ，而且求模型训练完成后就不再需要训练数据了。但局部加权线性回归在预测时始终需要训练数据来参与计算。
 
 ### 小结
 

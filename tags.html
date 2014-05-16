@@ -2,10 +2,11 @@
 layout: page
 title: 标签
 footer: false
+group: navigation
 ---
 
 <div id="blog-archives" class="tags">
-{% assign footer_content = null %}
+{% assign footer_content = "categories" %}
 {% for tag in site.tags %} 
   {% capture tagname %}{{ tag[0] }}{% endcapture %}
   <h2><a id="{{ tagname }}-ref" name="{{ tagname }}">{{ tagname }} </a></h2>
