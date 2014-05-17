@@ -4,11 +4,12 @@ title: "用python开发一个简易的spider(二)"
 description: "用python语言开发一个简单的spider系统。本篇介绍下载器及相关的东西。"
 category: python
 tags: [python, spider, 网页抓取, 爬虫, downloader]
+comments: true
 ---
 
 ### 简介
 
-在上一篇文章[python开发一个简易的spider(一)](/python/2013/08/06/simple-python-spider-1/)中从总体上介绍了simpleSpider系统的开发场景及各个模块的简单介绍。本篇文章介绍下载器(downloader)的开发及所需要注意的事项。
+在上一篇文章[python开发一个简易的spider(一)]({% post_url 2013-08-06-simple-python-spider-1 %})中从总体上介绍了simpleSpider系统的开发场景及各个模块的简单介绍。本篇文章介绍下载器(downloader)的开发及所需要注意的事项。
 
 ### python标准库urllib2
 

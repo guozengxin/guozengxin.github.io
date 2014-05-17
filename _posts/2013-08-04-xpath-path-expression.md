@@ -4,6 +4,7 @@ title: "xpath路径表达式及实例"
 description: "xpath的路径表达式有着丰富的技巧，通过巧妙的组合可以完成强大的功能。"
 category: xml
 tags: [xml, xpath, 路径表达式]
+comments: true
 ---
 
 ### OverView

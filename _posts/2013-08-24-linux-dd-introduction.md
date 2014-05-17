@@ -4,6 +4,7 @@ title: "linux下dd命令介绍"
 description: "dd命令是Linux下操作磁盘的命令，可以进行数据拷贝，并且拷贝过程中能够进行指定的转换。"
 category: linux
 tags: [linux, unix, dd]
+comments: true
 ---
 
 ### 简介

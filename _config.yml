@@ -1,18 +1,34 @@
-# This is the default format. 
-# For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
+# 站点设置(jekyll自带)
 permalink: /:categories/:year/:month/:day/:title 
-
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "code"]
-auto: true
-pygments: true
-paginate: 5
+highlighter: pygments
+paginate: 8
+timezone: Asia/Shanghai
 
-markdown: redcarpet
+# markdown设置
+markdown: kramdown
 
-# Themes are encouraged to use these universal variables 
-# so be sure to set them if your theme uses them.
-#
-title : Xiaoxin's Blog
+# 站点设置(个人)
+disqus_show_comment_count: true
+disqus_short_name: guozengxin
+recently_posts_limit: 6
+related_posts_limit: 6
+google_tracking_id: 'UA-48443270-1'
+
+
+# 站点链接设置
+url : http://blog.guozengxin.cn
+BASE_PATH : false
+ASSET_PATH : /assets
+archive_path: /archive.html
+categories_path : /categories.html
+about_path : /about.html
+tags_path : /tags.html
+rss_path : /rss.xml
+atom_path : /atom.xml
+
+# 个人信息
+title : "Xiaoxin's Blog"
 tagline: KEEP THINKING
 description: 技术博客, 个人博客
 author :
@@ -20,42 +36,8 @@ author :
   email : 
   github : guozengxin
   weibo: xdxiaoxin
-# twitter : username
-# feedburner : feedname
 
-# The production_url is only used when full-domain names are needed
-# such as sitemap.txt 
-# Most places will/should use BASE_PATH to make the urls
-#
-# If you have set a CNAME (pages.github.com) set your custom domain here.
-# Else if you are pushing to username.github.io, replace with your username.
-# Finally if you are pushing to a GitHub project page, include the project name at the end.
-#
-production_url : http://blog.guozengxin.cn
-
-BASE_PATH : false
-ASSET_PATH : /assets
-
-archive_path: /archive.html
-categories_path : /categories.html
-tags_path : /tags.html
-atom_path : /atom.xml
-rss_path : /rss.xml
-
-comments :
-  provider : disqus
-  disqus :
-    short_name : guozengxin
-  livefyre :
-    site_id : 123
-  intensedebate :
-    account : 123abc
-  facebook :
-    appid : 123
-    num_posts: 5
-    width: 580
-    colorscheme: light
-   
+# 站点分析
 analytics :
   provider : google 
   google : 

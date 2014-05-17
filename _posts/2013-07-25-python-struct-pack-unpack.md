@@ -4,6 +4,7 @@ title: "python语言中struct模块pack和unpack介绍"
 description: "python语言中可以使用struct模块对二进制数据进行操作"
 category: python
 tags: [python, struct, pack, unpack]
+comments: true
 ---
 
 ### OverView

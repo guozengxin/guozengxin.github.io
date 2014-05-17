@@ -1,21 +1,20 @@
 ---
 layout: page
-title: Tags
-header: Posts By Tag
+title: 标签
+footer: false
 group: navigation
 ---
-{% include setup %}
 
-<ul class="tag_box inline">
-  {% assign tags_list = site.tags %}  
-  {% include tags_list %}
-</ul>
-
-
+<div id="blog-archives" class="tags">
+{% assign footer_content = "categories" %}
 {% for tag in site.tags %} 
-  <h2 class="anchor" id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
-  <ul>
-    {% assign pages_list = tag[1] %}  
-    {% include pages_list %}
-  </ul>
+  {% capture tagname %}{{ tag[0] }}{% endcapture %}
+  <h2><a id="{{ tagname }}-ref" name="{{ tagname }}">{{ tagname }} </a></h2>
+  <p><br></p>
+  {% for post in tag[1] %}
+    <article>
+      {% include archive_post.html %}
+    </article>
+  {% endfor %}
 {% endfor %}
+</div>

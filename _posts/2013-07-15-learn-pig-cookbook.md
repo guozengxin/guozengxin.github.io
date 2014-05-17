@@ -4,6 +4,7 @@ title: "pig cookbook学习"
 description: "pic cookbook学习"
 category: hadoop
 tags: [pig, hadoop]
+comments: true
 ---
 
 ### Overview
