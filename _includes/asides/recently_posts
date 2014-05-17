@@ -1,5 +1,5 @@
 <section>
-<h4>Recently Posts</h4>
+<h1>最近发表</h1>
 <span class="category">
  <ul>
    {% for post in site.posts limit:site.recently_posts_limit %}
