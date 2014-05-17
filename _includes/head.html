@@ -1,53 +1,43 @@
 {% include setup %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>
-			{% if page.title %}
-			{{ page.title }} - 
-			{% endif %}
-			{{ site.title }}
-		</title>
-		{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-		{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{%else%}<meta name="keywords" content="{{ site.keywords }}">{% endif %}
-		<meta name="author" content="{{ site.author.name }}">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% if page.title %}
+      {{ page.title }} - 
+      {% endif %}
+      {{ site.title }}
+    </title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{%else%}<meta name="keywords" content="{{ site.keywords }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- Enable responsive viewport -->
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-		<script type="text/x-mathjax-config">
-			MathJax.Hub.Config({
-				tex2jax: {
-					inlineMath: [['$','$'], ['\\(','\\)']],
-					skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-				},
-				TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}}
-			});
-		</script>
-		<script type="text/javascript">
-			function addBlankTargetForLinks () {
-				$('a[href^="http"]').each(function(){
-						$(this).attr('target', '_blank');
-						});
-			}
-$(document).bind('DOMNodeInserted', function(event) {
-		addBlankTargetForLinks();
-		});
-	</script>
+    <!-- Enable responsive viewport -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+        },
+        TeX: {equationNumbers: {autoNumber: ["AMS"], useLabelIds: true}}
+      });
+    </script>
+    <script src="{{ ASSET_PATH }}/js/default.js"></script>
 
-	<!-- for machjax and pygment conflict -->
-	<style type="text/css">.MathJax .mi, .MathJax .mo, .MathJax .mtext { color: #111; }</style>
+<!-- for machjax and pygment conflict -->
+<style type="text/css">.MathJax .mi, .MathJax .mo, .MathJax .mtext { color: #111; }</style>
 
-	<!-- Le styles -->
-	<link href="{{ ASSET_PATH }}/css/bootstrap.2.2.2.min.css" rel="stylesheet">
-	<link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
-	<link href="{{ ASSET_PATH }}/css/pygments.css" rel="stylesheet" type="text/css" media="all">
-	<link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/css/zocial.stripped.css">
+<link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/css/zocial.stripped.css">
+<link href="{{ ASSET_PATH }}/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+<link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
 
-	<!-- atom & rss feed -->
-	<link href="{{ BASE_PATH }}{{ site.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
-	<link href="{{ BASE_PATH }}{{ site.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+<!-- atom & rss feed -->
+<link href="{{ BASE_PATH }}{{ site.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+<link href="{{ BASE_PATH }}{{ site.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
 </head>

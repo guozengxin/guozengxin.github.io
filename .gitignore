@@ -10,6 +10,7 @@
 _site/
 _theme_packages/
 code/
+.sass-cache/
 
 # ignore files
 Thumbs.db

@@ -4,6 +4,7 @@ title: "linux screen命令使用小结"
 description: "在linux下使用了screen命令之后，感觉这个命令确实有着强大的功能，对这个命令做一个总结。"
 category: linux
 tags: [linux, screen]
+comments: true
 ---
 
 ### 什么是 screen 

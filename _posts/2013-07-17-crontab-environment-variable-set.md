@@ -4,6 +4,7 @@ title: "crontab中环境变量设置"
 description: "crontab中的环境变量是与当前用户环境不一致的，因此当前可以执行的脚本不一定能在crontab中执行"
 category: linux
 tags: [linux, crontab, 环境变量]
+comments: true
 ---
 
 ### Question

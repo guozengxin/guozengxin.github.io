@@ -4,6 +4,7 @@ title: "swig输入文件简介"
 description: "使用swig将C或C++语言编译为其他类型语言的时候，一般需要一个声明文件来定义接口。"
 category: swig
 tags: [C++, swig, Python]
+comments: true
 ---
 
 ### Overview

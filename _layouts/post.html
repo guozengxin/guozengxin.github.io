@@ -2,65 +2,16 @@
 layout: default
 ---
 {% include setup %}
-<div class="page-header">
-  <h1>
-    {{ page.title }} 
-    {% if page.tagline %}
-      <small>{{ page.tagline }}</small>
-    {% endif %}
-  </h1>
+<div>
+{% include article.html %}
+{% if site.disqus_short_name and page.comments != false %}
+  <section>
+    <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
+  </section>
+{% endif %}
 </div>
-
-<div class="row">
-  <div class="span9">
-    {{ content }}
-    <hr>
-    <div class="row-fluid">
-      <div class="span9">
-        <div class="pagination btn-group">
-          {% if page.previous %}
-            <a class="btn prev" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a>
-          {% else %}
-            <a class="btn disabled prev">&larr; Previous</a>
-          {% endif %}
-            <a class="btn" href="{{ BASE_PATH }}{{ site.archive_path }}">Archive</a>
-          {% if page.next %}
-            <a class="btn next" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a>
-          {% else %}
-            <a class="btn next disabled">Next &rarr;</a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-    {% include comments %}
-  </div>
-  
-  <div class="span3">
-    <section>
-      <h3>Published</h3>
-      <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
-    </section>
-      <hr></hr>
-    {% if page.category %}
-    <section>
-    <h3>Category</h3>
-    <ul class="tag_box">
-	  {% assign categories_list = page.categories %}  
-	  {% include categories_list %}  
-    </ul>
-    </section>
-      <hr></hr>
-    {% endif %}
-    {% unless page.tags == empty %}
-      <section>
-        <h3>Tags</h3>
-        <ul class="tag_box">
-          {% assign tags_list = page.tags %}
-          {% include tags_list %}
-        </ul>
-      </section>
-      <hr></hr>
-    {% endunless %}
-    {% include asides/license %}
-  </div>
-</div>
+{% unless page.sidebar == false %}
+  <aside class="sidebar">
+    {% include aside.html %}
+  </aside>
+{% endunless %}

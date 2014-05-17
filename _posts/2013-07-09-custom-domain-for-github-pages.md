@@ -4,6 +4,7 @@ title: "为github pages设置个人域名"
 description: "利用jekyll及github可以快速建立个人站点。如果不想用github默认的username.github.io这个域名的话，可以增加自己的域名。"
 category: blog
 tags: [个人域名, github]
+comments: true
 ---
 
 1. 利用jekyll及github可以快速建立个人站点。如果不想用github默认的username.github.io这个域名的话，可以增加自己的域名。

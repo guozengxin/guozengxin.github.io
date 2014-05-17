@@ -1,0 +1,17 @@
+{% capture category %}{{ post.categories | size }}{% endcapture %}
+{% capture tags %}{{ post.tags | size }}{% endcapture %}
+<h1><a href="{{ BASE_PATH }}{{ post.url }}">{{post.title}}</a></h1>
+{% if pagename == "archive" %}
+  <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>{{ post.date | date: "<span class='month'>%m月</span> <span class='day'>%d日</span> <span class='year'>%Y</span>"}}</time>
+{% else %}
+  <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>{{ post.date | date: "%x"}}</time>
+{% endif %}
+{% if category != '0' and footer_content == "categories" %}
+<footer>
+  {% include show_category.html category = post.category %}
+</footer>
+{% elsif tags != '0' and footer_content == "tags" %}
+<footer>
+  {% include show_tags.html tags = post.tags %}
+</footer>
+{% endif %}

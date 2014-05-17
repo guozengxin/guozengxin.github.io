@@ -4,6 +4,7 @@ title: "向pig脚本传递参数"
 description: ""
 category: hadoop
 tags: [pig, hadoop, 传参]
+comments: true
 ---
 
 ### 直接传参

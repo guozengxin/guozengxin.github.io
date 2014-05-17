@@ -1,27 +1,24 @@
 <ul class="main-navigation">
-	<li><a href="{{ HOME_PATH }}">Home</a></li>
-	<li><a href="{{ BASE_PATH }}/archive.html">Archives</a></li>
-	<li><a href="{{ BASE_PATH }}/categories.html">Categories</a></li>
-	<li><a href="{{ BASE_PATH }}/tags.html">Tags</a></li>
+  <li><a href="{{ HOME_PATH }}">首页</a></li>
+  <li><a href="{{ BASE_PATH }}{{ site.archive_path }}">归档</a></li>
+  <li><a href="{{ BASE_PATH }}{{ site.categories_path }}">分类</a></li>
+  <li><a href="{{ BASE_PATH }}{{ site.about_path }}">关于</a></li>
 </ul>
 <ul class="social">
-	<li>
-	<a href="{{ BASE_PATH }}/rss.xml" class="zocial rss icon" target="_blank">
-		<span class="hidden-desktop">RSS</span>
-	</a>
-	</li>
-	{% if site.author.github %}
-	<li>
-	<a href="https://github.com/{{ site.author.github }}" class="zocial github icon" target="_blank">
-		<span class="hidden-desktop">Github</span>
-	</a>
-	</li>
-	{% endif %}
-	{% if site.author.weibo %}
-	<li>
-	<a href="http://weibo.com/{{ site.author.weibo }}" class="zocial weibo icon" target="_blank">
-		<span class="hidden-desktop">Weibo</span>
-	</a>
-	</li>
-	{% endif %}
+  <li>
+  <a href="{{ BASE_PATH }}/rss.xml" class="zocial rss icon" target="_blank">
+  </a>
+  </li>
+  {% if site.author.github %}
+  <li>
+  <a href="https://github.com/{{ site.author.github }}" class="zocial github icon" target="_blank">
+  </a>
+  </li>
+  {% endif %}
+  {% if site.author.weibo %}
+  <li>
+  <a href="http://weibo.com/{{ site.author.weibo }}" class="zocial weibo icon" target="_blank">
+  </a>
+  </li>
+  {% endif %}
 </ul>

@@ -4,11 +4,12 @@ title: "python语言logging模块的进阶用法"
 description: "python语言logging模块的进阶用法，handler, filter, logger, formatter等类的用法"
 category: python
 tags: [python, logging]
+comments: true
 ---
 
 ### OverView
 
-在上一篇文章中，介绍了[logging模块的基本用法](/python/2013/07/27/python-logging-module/)，本篇中，介绍有关logging模块的进阶用法。
+在上一篇文章中，介绍了[logging模块的基本用法]({% post_url 2013-07-27-python-logging-module %})，本篇中，介绍有关logging模块的进阶用法。
 
 ### 四个基本组件
 

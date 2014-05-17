@@ -4,6 +4,7 @@ title: "python函数之 filter map reduce"
 description: "python中有很多设计巧妙且实用的函数，能极大的减少开发的工作量，使代码看起来相当的简洁。本文介绍其中的几个：filter, map 和 reduce"
 category: python
 tags: [python, filter, map, reduce]
+comments: true
 ---
 
 ### 简介

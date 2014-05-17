@@ -4,6 +4,7 @@ title: "git提交出现\"The remote end hung up unexpectedly\"的解决方法"
 description: "The solve of \"fatal: The remote end hung up unexpectedly\"."
 category: git
 tags: [git, github, commit]
+comments: true
 ---
 
 ### HTTP错误411

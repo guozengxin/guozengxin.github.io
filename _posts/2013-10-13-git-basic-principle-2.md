@@ -4,16 +4,17 @@ title: "git基本原理（二）引用和打包"
 description: ""
 category: git
 tags: [git, References, 版本控制, Pro Git, Packfiles]
+comments: true
 ---
 
 ### 系列文章
 
-[git基本原理（一）目录结构与对象](/git/2013/09/25/git-basic-principle-1/) <br/>
-[git基本原理（二）引用和打包](/git/2013/10/13/git-basic-principle-2/)
+[git基本原理（一）目录结构与对象]({% post_url 2013-09-25-git-basic-principle-1 %}) <br/>
+[git基本原理（二）引用和打包]({% post_url 2013-10-13-git-basic-principle-2 %})
 
 ### 简介
 
-在[上节](/git/2013/09/25/git-basic-principle-1/)中介绍了 git 中的目录结构和对象，本节我们但要有关 git 基本原理的另外一些内容：引用和打包。本项目的测试项目接着上节介绍。
+在[上节]({% post_url 2013-09-25-git-basic-principle-1 %})中介绍了 git 中的目录结构和对象，本节我们但要有关 git 基本原理的另外一些内容：引用和打包。本项目的测试项目接着上节介绍。
 
 <!-- more -->
 
@@ -101,7 +102,7 @@ refs/heads/master
 
 不带参数，读取 HEAD 文件，带参数来设置 HEAD 文件。
 
-在上一节[git基本原理（一）目录结构与对象](/git/2013/09/25/git-basic-principle-1/)中，我们在设置 commit 对象的时候，用命令`git commit-tree ea162a -p 741030`来设置一个 commit 对象，需要`-p`参数来指定父级对象。事实上，当我们执行`git commit`命令的时候，会创建一个 commit 对象，这个对象的父级设置为 HEAD 指向的引用的 SHA-1 值。
+在上一节[git基本原理（一）目录结构与对象]({% post_url 2013-09-25-git-basic-principle-1 %})中，我们在设置 commit 对象的时候，用命令`git commit-tree ea162a -p 741030`来设置一个 commit 对象，需要`-p`参数来指定父级对象。事实上，当我们执行`git commit`命令的时候，会创建一个 commit 对象，这个对象的父级设置为 HEAD 指向的引用的 SHA-1 值。
 
 #### Tags
 

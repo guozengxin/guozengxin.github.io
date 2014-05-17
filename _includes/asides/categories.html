@@ -1,0 +1,21 @@
+{% if page.category %}
+<section>
+<h1>分类</h1>
+  <ul>
+    {% for category in site.categories %}
+      <li><a href="{{ BASE_PATH }}{{ site.categories_path }}#{{ category[0] }}-ref">
+          {{ category[0] }}
+      </a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% elsif site.categories %}
+<section>
+  <h1>分类</h1>
+    <ul class="categories">
+      {% for category in site.categories %}
+      <li><a class="category" href="{{ BASE_PATH }}{{ site.categories_path }}#{{ category[0] }}-ref"> {{ category[0] }} </a>(<span>{{ category[1] | size}}<span>)</li>
+      {% endfor %}
+    </ul>
+</section>
+{% endif %}

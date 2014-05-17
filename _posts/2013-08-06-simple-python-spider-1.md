@@ -4,6 +4,7 @@ title: "用python开发一个简易的spider(一)"
 description: "用python语言开发一个简单的spider系统，并暴露出一些方便易用的接口，可以在有业务需求时导入spider模块，快速构建抓取流程。"
 category: python
 tags: [python, spider, 网页抓取, 爬虫]
+comments: true
 ---
 
 ### 前言
