@@ -18,8 +18,8 @@
   {% endunless %}
 
   {% if index %}
-    {% if post.content and post.content contains "<!-- more -->" %}
-      {% capture content %} {{ post.content | split:'<!-- more -->' | first }}{% endcapture %}
+    {% if post.content and post.excerpt %}
+      {% capture content %} {{ post.excerpt }}{% endcapture %}
       {% assign has_excerpt = true %}
     {% else %}
       {% capture content %} {{ post.content }}{% endcapture %}
