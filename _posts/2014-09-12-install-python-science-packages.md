@@ -23,6 +23,8 @@ python拥有着众多的开源包，其中用于科学计算的包也是非常�
 - [ipython][]: ipython是python语言的交互式工具，和matlab的交互式界面类似。
 - [sympy][]: SymPy是一个符号计算的Python库。它的目标是成为一个全功能的计算机代数系统，同时保持代码简洁、易于理解和扩展。
 
+<!-- more -->
+
 ### pip
 
 [pip][]是python的包管理工具，集成了多种安装方法，参考[https://pypi.python.org/pypi/pip][pip]. pip可以用以下几种方法进行安装:

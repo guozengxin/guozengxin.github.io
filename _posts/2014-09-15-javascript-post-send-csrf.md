@@ -15,6 +15,8 @@ comments: true
 
 **需要在发送请求时带上csrf token!**
 
+<!-- more -->
+
 ### js获取cookie
 
 参考[django csrf的介绍][django-csrf]，其中有用js获取cookie的函数：
