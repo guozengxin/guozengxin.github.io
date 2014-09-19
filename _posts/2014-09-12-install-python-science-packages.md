@@ -71,13 +71,14 @@ yum install blas-devel lapack-devel
 apt-get install libblas-dev liblapack-dev
 {% endhighlight %}
 
-#### matplotlib, sympy
+#### matplotlib, sympy, scipy
 
-matplotlib, sympy这两个包可以直接用pip安装, matplotlib的使用需要显卡支持，如果是在一台没有显卡的linux服务器上操作的话，这个包是无法使用的。
+matplotlib, sympy, scipy可以直接用pip安装, matplotlib的使用需要显卡支持，如果是在一台没有显卡的linux服务器上操作的话，这个包是无法使用的(可以正常安装)。
 
 {% highlight python %}
 pip install matplotlib
 pip install sympy
+pip install scipy
 {% endhighlight %}
 
 #### ipython
