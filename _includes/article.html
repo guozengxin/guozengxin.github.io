@@ -34,6 +34,7 @@
     <div class="entry-content">{{ content }}</div>
     <footer>
       <p class="meta">
+        {% include post/author.html %}
         {% include post/categories.html %}
       </p>
       {% unless page.sharing == false %}
