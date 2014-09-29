@@ -98,28 +98,28 @@ a {
 }
 
 html {
-  background: #252525 url('../images/line-tile.png?1400087478') top left;
+  background: #252525 url('../images/line-tile.png?1411909406') top left;
 }
 
 body > div#main {
-  background: #edeff4 url('../images/noise.png?1397966579') top left;
+  background: #edeff4 url('../images/noise.png?1411909407') top left;
   border-bottom: 1px solid #bfbfbf;
 }
 body > div#main > div {
-  background: #f8f8f8 url('../images/noise.png?1397966579') top left;
+  background: #f8f8f8 url('../images/noise.png?1411909407') top left;
   border-right: 1px solid #dadde3;
 }
 
 .heading, body > header h1, h1, h2, h3, h4, h5, h6 {
-  font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open Sans", "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif;
 }
 
 .sans, body > header h2, article header p.meta, article > footer, #content .blog-index footer, html .gist .gist-file .gist-meta, #blog-archives a.category, #blog-archives a.tag, #blog-archives time, aside.sidebar section, body > footer {
-  font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open Sans", "PT Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 .serif, body, #content .blog-index a[rel=full-article] {
-  font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
+  font-family: "Open Sans", "PT Serif", Georgia, Times, "Times New Roman", serif;
 }
 
 .mono, pre, code, tt, p code, li code {
@@ -128,14 +128,14 @@ body > div#main > div {
 
 body > header h1 {
   font-size: 2.2em;
-  font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open Sans", "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif;
   font-weight: normal;
   line-height: 1.2em;
   margin-bottom: 0.6667em;
 }
 
 body > header h2 {
-  font-family: "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open Sans", "PT Serif", "Georgia", "Helvetica Neue", Arial, sans-serif;
 }
 
 body {
@@ -645,11 +645,11 @@ body > header h2 {
 body > nav {
   position: relative;
   background-color: #cccccc;
-  background: url('../images/noise.png?1397966579'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e0e0e0), color-stop(50%, #cccccc), color-stop(100%, #b0b0b0));
-  background: url('../images/noise.png?1397966579'), -webkit-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
-  background: url('../images/noise.png?1397966579'), -moz-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
-  background: url('../images/noise.png?1397966579'), -o-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
-  background: url('../images/noise.png?1397966579'), linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
+  background: url('../images/noise.png?1411909407'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e0e0e0), color-stop(50%, #cccccc), color-stop(100%, #b0b0b0));
+  background: url('../images/noise.png?1411909407'), -webkit-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
+  background: url('../images/noise.png?1411909407'), -moz-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
+  background: url('../images/noise.png?1411909407'), -o-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
+  background: url('../images/noise.png?1411909407'), linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
   border-top: 1px solid #f2f2f2;
   border-bottom: 1px solid #8c8c8c;
   padding-top: .35em;
@@ -665,7 +665,7 @@ body > nav form {
 body > nav form .search {
   padding: .3em .5em 0;
   font-size: .85em;
-  font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Open Sans", "PT Sans", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.1em;
   width: 95%;
   -webkit-border-radius: 0.5em;
@@ -759,7 +759,7 @@ body > nav ul {
   }
   body > nav a {
     color: #6b6b6b;
-    font-family: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Open Sans", "PT Sans", "Helvetica Neue", Arial, sans-serif;
     text-shadow: #ebebeb 0 1px;
     float: left;
     text-decoration: none;
@@ -815,7 +815,7 @@ body > nav ul {
 }
 
 .no-placeholder body > nav .search {
-  background: #f2f2f2 url('../images/search.png?1400087478') 0.3em 0.25em no-repeat;
+  background: #f2f2f2 url('../images/search.png?1411909407') 0.3em 0.25em no-repeat;
   text-indent: 1.3em;
 }
 
@@ -846,11 +846,11 @@ body > nav ul {
   padding: 0;
 }
 .maskImage a[rel=subscribe-rss], .maskImage a[rel=subscribe-rss]:after {
-  -webkit-mask-image: url('../images/rss.png?1400087478');
-  -moz-mask-image: url('../images/rss.png?1400087478');
-  -ms-mask-image: url('../images/rss.png?1400087478');
-  -o-mask-image: url('../images/rss.png?1400087478');
-  mask-image: url('../images/rss.png?1400087478');
+  -webkit-mask-image: url('../images/rss.png?1411909407');
+  -moz-mask-image: url('../images/rss.png?1411909407');
+  -ms-mask-image: url('../images/rss.png?1411909407');
+  -o-mask-image: url('../images/rss.png?1411909407');
+  mask-image: url('../images/rss.png?1411909407');
   -webkit-mask-repeat: no-repeat;
   -moz-mask-repeat: no-repeat;
   -ms-mask-repeat: no-repeat;
@@ -878,11 +878,11 @@ body > nav ul {
   padding: 0;
 }
 .maskImage a[rel=subscribe-email], .maskImage a[rel=subscribe-email]:after {
-  -webkit-mask-image: url('../images/email.png?1400087478');
-  -moz-mask-image: url('../images/email.png?1400087478');
-  -ms-mask-image: url('../images/email.png?1400087478');
-  -o-mask-image: url('../images/email.png?1400087478');
-  mask-image: url('../images/email.png?1400087478');
+  -webkit-mask-image: url('../images/email.png?1411909406');
+  -moz-mask-image: url('../images/email.png?1411909406');
+  -ms-mask-image: url('../images/email.png?1411909406');
+  -o-mask-image: url('../images/email.png?1411909406');
+  mask-image: url('../images/email.png?1411909406');
   -webkit-mask-repeat: no-repeat;
   -moz-mask-repeat: no-repeat;
   -ms-mask-repeat: no-repeat;
@@ -1104,7 +1104,7 @@ p.meta + .sharing {
   text-align: right;
   font-size: 13px;
   line-height: 1.45em;
-  background: #073642 url('../images/noise.png?1397966579') top left !important;
+  background: #073642 url('../images/noise.png?1411909407') top left !important;
   border-right: 1px solid #00232c !important;
   -webkit-box-shadow: #083e4b -1px 0 inset;
   -moz-box-shadow: #083e4b -1px 0 inset;
@@ -1172,7 +1172,7 @@ html .gist .gist-file .gist-meta {
   border: 1px solid #083e4b !important;
   color: #586e75;
   font-size: .7em !important;
-  background: #073642 url('../images/noise.png?1397966579') top left;
+  background: #073642 url('../images/noise.png?1411909407') top left;
   line-height: 1.5em;
 }
 html .gist .gist-file .gist-meta a {
@@ -1200,7 +1200,7 @@ html .gist .gist-file .gist-meta a[href*=raw] {
 }
 
 pre {
-  background: #002b36 url('../images/noise.png?1397966579') top left;
+  background: #002b36 url('../images/noise.png?1411909407') top left;
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
   -ms-border-radius: 0.4em;
@@ -1254,7 +1254,7 @@ p pre code, li pre code {
   padding: .8em;
   overflow-x: auto;
   line-height: 1.45em;
-  background: #002b36 url('../images/noise.png?1397966579') top left !important;
+  background: #002b36 url('../images/noise.png?1411909407') top left !important;
   color: #93a1a1 !important;
   /* Comment */
   /* Comment.Multiline */
@@ -1546,7 +1546,7 @@ figure.code .highlight {
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px;
   font-family: "Helvetica Neue", Arial, "Lucida Grande", "Lucida Sans Unicode", Lucida, sans-serif;
-  background: #aaaaaa url('../images/code_bg.png?1400087478') top repeat-x;
+  background: #aaaaaa url('../images/code_bg.png?1411909406') top repeat-x;
   border: 1px solid #565656;
   border-top-color: #cbcbcb;
   border-left-color: #a5a5a5;
@@ -1783,7 +1783,7 @@ aside.sidebar:hover a:hover {
     -webkit-border-bottom-right-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
     text-align: center;
-    background: #f8f8f8 url('../images/noise.png?1397966579') top left;
+    background: #f8f8f8 url('../images/noise.png?1411909407') top left;
     border-bottom: 1px solid #dadde3;
     border-right: 1px solid #dadde3;
     content: "\00BB";
@@ -1864,11 +1864,11 @@ body > footer {
   color: #888888;
   text-shadow: #d9d9d9 0 1px;
   background-color: #cccccc;
-  background: url('../images/noise.png?1397966579'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e0e0e0), color-stop(50%, #cccccc), color-stop(100%, #b0b0b0));
-  background: url('../images/noise.png?1397966579'), -webkit-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
-  background: url('../images/noise.png?1397966579'), -moz-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
-  background: url('../images/noise.png?1397966579'), -o-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
-  background: url('../images/noise.png?1397966579'), linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
+  background: url('../images/noise.png?1411909407'), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e0e0e0), color-stop(50%, #cccccc), color-stop(100%, #b0b0b0));
+  background: url('../images/noise.png?1411909407'), -webkit-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
+  background: url('../images/noise.png?1411909407'), -moz-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
+  background: url('../images/noise.png?1411909407'), -o-linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
+  background: url('../images/noise.png?1411909407'), linear-gradient(#e0e0e0, #cccccc, #b0b0b0);
   border-top: 1px solid #f2f2f2;
   position: relative;
   padding-top: 1em;
