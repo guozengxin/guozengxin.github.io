@@ -28,6 +28,22 @@ article {
       background: $img-border bottom left repeat-x;
     }
   }
+  table {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #D8D8D8;
+    margin-bottom: 8px;
+  }
+  table th {
+     background: image-url("noise.png") repeat scroll left top #eee;
+  }
+  table th, table td {
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #D8D8D8;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
   h2 {
     padding-top: 0.8em;
     background: $img-border top left repeat-x;

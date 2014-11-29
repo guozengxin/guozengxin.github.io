@@ -938,6 +938,22 @@ article header p.meta {
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x;
   }
 }
+article table {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #D8D8D8;
+  margin-bottom: 8px;
+}
+article table th {
+  background: url('../images/noise.png?1411909407') repeat scroll left top #eeeeee;
+}
+article table th, article table td {
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #D8D8D8;
+  padding-left: 3px;
+  padding-right: 3px;
+}
 article h2 {
   padding-top: 0.8em;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x;
