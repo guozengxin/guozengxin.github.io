@@ -29,6 +29,8 @@ python setup.py install
 
 **适用系统**：Linux, 装有Python运行环境的系统
 
+<!-- more -->
+
 ## 2. 下载翻译结果
 
 本项目的关键之一就是从iciba上下载词语的翻译结果，分2步。1. 用词语拼成iciba的URL；2. 用urllib2下载结果。
