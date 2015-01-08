@@ -17,7 +17,7 @@ comments: true
 
 ## 题解
 
-用python中的[sklearn][]包，利用[PolynomialFeatures][]模块，来实现多项式回归的算法。使用方法可能参考：[Polynomial interpolation](http://scikit-learn.org/stable/auto_examples/linear_model/plot_polynomial_interpolation.html)，在这个题目中我参考了示例中的岭回归算法，没有使用线性回归算法，可能由于这个没到拿到10分，后面可以再做尝试。
+用python中的[sklearn][]包，利用[PolynomialFeatures][]模块，来实现多项式回归的算法。使用方法可能参考：[Polynomial interpolation](http://scikit-learn.org/stable/auto_examples/linear_model/plot_polynomial_interpolation.html)，在这个题目没到拿到10分，应该是多项式的维度上没有选择好，后面有时间可以再做尝试。
 
 {% highlight python %}
 #!/usr/bin/env python
@@ -25,7 +25,7 @@ comments: true
 
 import sys
 import numpy as np
-from sklearn.linear_model import Ridge
+from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import make_pipeline
 
@@ -56,13 +56,13 @@ def main():
     minVar = 99999999
     finalDegree = 2
     for degree in [2, 3, 4]:
-        model = make_pipeline(PolynomialFeatures(degree), Ridge())
+        model = make_pipeline(PolynomialFeatures(degree), LinearRegression())
         model.fit(X, y)
         predictR = model.predict(X)
-        if minVar < np.var(predictR - y):
+        if minVar > np.var(predictR - y):
             finalDegree = degree
             minVar = np.var(predictR - y)
-    model = make_pipeline(PolynomialFeatures(finalDegree), Ridge())
+    model = make_pipeline(PolynomialFeatures(finalDegree), LinearRegression())
     model.fit(X, y)
     result = model.predict(testData)
     for r in result:
