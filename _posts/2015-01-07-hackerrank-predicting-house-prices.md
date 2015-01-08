@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[hackerrank]Predicting House Prices"
-description: "hackerrank题目, Multivariate Linear Regression: Predicting House Prices for Charlie. Multivariate Linear Regression: Predicting House Prices for Charlie"
+description: "hackerrank题目, Multivariate Linear Regression: Predicting House Prices for Charlie."
 category: machine-learning
 tags: [machine-learning, linear regression]
 comments: true
