@@ -3,7 +3,7 @@ layout: post
 title: "Linux性能分析工具(一) - top命令"
 description: "linux性能优化工具介绍（1），介绍top命令。"
 category: 性能优化
-tags: [性能优化，linux, top]
+tags: [性能优化, linux, top]
 comments: true
 ---
 
