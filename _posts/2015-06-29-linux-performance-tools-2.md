@@ -20,6 +20,8 @@ vmstat命令是一个常用的linux性能监控工具，可以对CPU，内存，
 	r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
 	0  0 593136 414880 495560 5536520    0    0    19    17    0    0  4  2 94  0  0
 
+<!-- more -->
+
 在这个结果中
 
 - `r`表示当前正在有多少个进程在使用CPU，当这个值超过了机器CPU的数目，就表示CPU负载过高。
