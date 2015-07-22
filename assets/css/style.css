@@ -1108,7 +1108,8 @@ p.meta + .sharing {
 }
 
 .highlight, html .gist .gist-file .gist-syntax .gist-highlight {
-  border: 1px solid #05232b !important;
+  border: 1px solid #d0d0d0 !important;
+  border-radius: 0.2em;
 }
 .highlight table td.code, html .gist .gist-file .gist-syntax .gist-highlight table td.code {
   width: 100%;
@@ -1118,12 +1119,12 @@ p.meta + .sharing {
   text-align: right;
   font-size: 13px;
   line-height: 1.45em;
-  background: #073642 url('../images/noise.png?1411909407') top left !important;
-  border-right: 1px solid #00232c !important;
-  -webkit-box-shadow: #083e4b -1px 0 inset;
-  -moz-box-shadow: #083e4b -1px 0 inset;
-  box-shadow: #083e4b -1px 0 inset;
-  text-shadow: #021014 0 -1px;
+  background: #dddddd url('../images/noise.png?1411909407') top left !important;
+  border-right: 1px solid #fafafa !important;
+  -webkit-box-shadow: #e2e2e2 -1px 0 inset;
+  -moz-box-shadow: #e2e2e2 -1px 0 inset;
+  box-shadow: #e2e2e2 -1px 0 inset;
+  text-shadow: #c4c4c4 0 -1px;
   padding: .8em !important;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -1147,19 +1148,19 @@ figure.code .highlight pre, .gist-file .highlight pre, pre .highlight pre {
 }
 
 .gist .highlight *::-moz-selection, figure.code .highlight *::-moz-selection {
-  background: #386774;
+  background: white;
   color: inherit;
-  text-shadow: #002b36 0 1px;
+  text-shadow: white 0 1px;
 }
 .gist .highlight *::-webkit-selection, figure.code .highlight *::-webkit-selection {
-  background: #386774;
+  background: white;
   color: inherit;
-  text-shadow: #002b36 0 1px;
+  text-shadow: white 0 1px;
 }
 .gist .highlight *::selection, figure.code .highlight *::selection {
-  background: #386774;
+  background: white;
   color: inherit;
-  text-shadow: #002b36 0 1px;
+  text-shadow: white 0 1px;
 }
 
 html .gist .gist-file {
@@ -1176,17 +1177,17 @@ html .gist .gist-file .gist-syntax {
   background: none !important;
 }
 html .gist .gist-file .gist-syntax .gist-highlight {
-  background: #002b36 !important;
+  background: white !important;
 }
 html .gist .gist-file .gist-syntax .highlight pre {
   padding: 0;
 }
 html .gist .gist-file .gist-meta {
   padding: .6em 0.8em;
-  border: 1px solid #083e4b !important;
+  border: 1px solid #e2e2e2 !important;
   color: #586e75;
   font-size: .7em !important;
-  background: #073642 url('../images/noise.png?1411909407') top left;
+  background: #dddddd url('../images/noise.png?1411909407') top left;
   line-height: 1.5em;
 }
 html .gist .gist-file .gist-meta a {
@@ -1214,13 +1215,13 @@ html .gist .gist-file .gist-meta a[href*=raw] {
 }
 
 pre {
-  background: #002b36 url('../images/noise.png?1411909407') top left;
+  background: white url('../images/noise.png?1411909407') top left;
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
   -ms-border-radius: 0.4em;
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
-  border: 1px solid #05232b;
+  border: 1px solid #d0d0d0;
   line-height: 1.45em;
   font-size: 13px;
   margin-bottom: 2.1em;
@@ -1268,7 +1269,7 @@ p pre code, li pre code {
   padding: .8em;
   overflow-x: auto;
   line-height: 1.45em;
-  background: #002b36 url('../images/noise.png?1411909407') top left !important;
+  background: white url('../images/noise.png?1411909407') top left !important;
   color: #93a1a1 !important;
   /* Comment */
   /* Comment.Multiline */
@@ -1364,12 +1365,12 @@ p pre code, li pre code {
 }
 .pre-code .gd, html .gist .gist-file .gist-syntax .highlight pre .gd, .highlight code .gd {
   color: #93a1a1 !important;
-  background-color: #372c34 !important;
+  background-color: #f6cbcb !important;
   display: inline-block;
 }
 .pre-code .gd .x, html .gist .gist-file .gist-syntax .highlight pre .gd .x, .highlight code .gd .x {
   color: #93a1a1 !important;
-  background-color: #4d2d33 !important;
+  background-color: #f2b7b6 !important;
   display: inline-block;
 }
 .pre-code .ge, html .gist .gist-file .gist-syntax .highlight pre .ge, .highlight code .ge {
@@ -1381,12 +1382,12 @@ p pre code, li pre code {
 }
 .pre-code .gi, html .gist .gist-file .gist-syntax .highlight pre .gi, .highlight code .gi {
   color: #93a1a1 !important;
-  background-color: #1a412b !important;
+  background-color: #e6eacc !important;
   display: inline-block;
 }
 .pre-code .gi .x, html .gist .gist-file .gist-syntax .highlight pre .gi .x, .highlight code .gi .x {
   color: #93a1a1 !important;
-  background-color: #355720 !important;
+  background-color: #ced699 !important;
   display: inline-block;
 }
 .pre-code .gs, html .gist .gist-file .gist-syntax .highlight pre .gs, .highlight code .gs {
@@ -1499,7 +1500,7 @@ p pre code, li pre code {
 
 .highlight, .gist-highlight {
   margin-bottom: 1.8em;
-  background: #002b36;
+  background: white;
   overflow-y: hidden;
   overflow-x: auto;
 }
