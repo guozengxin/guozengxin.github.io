@@ -45,11 +45,11 @@ article {
     padding-right: 3px;
   }
   h2 {
-    padding-top: 0.8em;
-    background: $img-border top left repeat-x;
+    padding: 0.3em;
+    background: #ECEFF1;
+    border-left: #607d88 solid thick;
   }
   .entry-content & h2:first-child, header + h2 { padding-top: 0; }
-  h2:first-child, header + h2 { background: none; }
   .feature {
     padding-top: .5em;
     margin-bottom: 1em;

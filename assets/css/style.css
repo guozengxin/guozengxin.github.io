@@ -955,14 +955,12 @@ article table th, article table td {
   padding-right: 3px;
 }
 article h2 {
-  padding-top: 0.8em;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') top left repeat-x;
+  padding: 0.3em;
+  background: #ECEFF1;
+  border-left: #607d88 solid thick;
 }
 .entry-content article h2:first-child, article header + h2 {
   padding-top: 0;
-}
-article h2:first-child, article header + h2 {
-  background: none;
 }
 article .feature {
   padding-top: .5em;
