@@ -38,6 +38,8 @@ a = io.read('*n')
 print(fact(a))
 {% endhighlight %}
 
+<!-- more -->
+
 ## Chunk
 
 在lua中，chunk是指一个代码片段，每个lua文件是一个chunk，或者在交互模式下每行是一个chunk。
