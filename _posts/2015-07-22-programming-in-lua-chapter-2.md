@@ -22,6 +22,8 @@ print(type(nil))		--> nil
 print(type({}))			--> table
 {% endhighlight %}
 
+<!-- more -->
+
 ## Nil
 
 nil类型只有一个值：nil，和python中的None类似，表示什么也没有。默认情况下，变量没有经过初始化时，它的值默认为nil。
