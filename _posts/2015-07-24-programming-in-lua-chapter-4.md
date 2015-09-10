@@ -52,11 +52,11 @@ j = 10           --> global variable
 local i = 1      --> local variable
 {% endhighlight %}
 
-局部变量的作用域是代码块，代码块是指一个控制结构、函数体或者一个trunk内。
+局部变量的作用域是代码块，代码块是指一个控制结构、函数体或者一个chunk内。
 
 {% highlight lua %}
 x = 10
-local i = 1              --> 作用域trunk
+local i = 1              --> 作用域chunk
 
 while i <= x do
     local x = i * 2     --> 作用域while语句
@@ -75,7 +75,7 @@ end
 print(x)                --> 10 (这里x是全局变量)
 {% endhighlight %}
 
-注意在交互模式下每一行是一个trunk，所以如果用local定义变量的话，这个变量只有在当前行有效。为了解决这个问题，我们可以用`do-end`来限定代码块：
+注意在交互模式下每一行是一个chunk，所以如果用local定义变量的话，这个变量只有在当前行有效。为了解决这个问题，我们可以用`do-end`来限定代码块：
 
 {% highlight lua %}
 do

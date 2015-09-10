@@ -53,7 +53,7 @@ a = 1 b = a * 2    -- ugly
 a = 1; b = a * 2   -- recommend
 {% endhighlight %}
 
-在命令行下，python一样，输入`lua`可进入交互模式。在交互模式下每输入一行代码是一个trunk, 会被立即执行：
+在命令行下，python一样，输入`lua`可进入交互模式。在交互模式下每输入一行代码是一个chunk, 会被立即执行：
 
 {% highlight lua %}
 $ lua
