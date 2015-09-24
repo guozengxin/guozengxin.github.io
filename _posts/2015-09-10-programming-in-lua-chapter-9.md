@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "lua学习笔记(9)--协程"
-description: "lua学习笔记，第八章，协程"
+description: "lua学习笔记，第九章，协程"
 category: lua
 tags: [Programming in Lua, 协程, Coroutines, 线程]
 comments: true
@@ -293,7 +293,7 @@ end
 --> a b c
 {% endhighlight %}
 
-`permutations`函数使用了Lua中常见的模式，将*resume*的调用封装到一个函数中。这种方式中Lua很常见，所以Lua中专门提供了一个函数`coroutine.wrap`。与*create*相同的是，*wrap*创建一个新的协程，也*create*不是的是，*wrap*不返回协程本身，而且返回一个函数，调用这个函数可以*resume*这个协程。和直接调用*resume*不同，`wrap`函数不会返回错误代码，而且抛出一个错误。我们使用`wrap`重写`permutations`函数：
+`permutations`函数使用了Lua中常见的模式，将*resume*的调用封装到一个函数中。这种方式中Lua很常见，所以Lua中专门提供了一个函数`coroutine.wrap`。与*create*相同的是，*wrap*创建一个新的协程，与*create*不同的是，*wrap*不返回协程本身，而是返回一个函数，调用这个函数可以*resume*这个协程。和直接调用*resume*不同，`wrap`函数不会返回错误代码，而且抛出一个错误。我们使用`wrap`重写`permutations`函数：
 
 {% highlight lua %}
 function permutations(a)
