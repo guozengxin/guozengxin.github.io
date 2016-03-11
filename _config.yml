@@ -34,7 +34,7 @@ google_tracking_id: 'UA-48443270-1'
 
 
 # 站点链接设置
-url : http://blog.guozengxin.cn
+url : http://guozengxin.me
 BASE_PATH : false
 ASSET_PATH : /assets
 archive_path: /archive.html

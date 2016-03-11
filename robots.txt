@@ -5,4 +5,4 @@ Disallow: /google37da3d80678ba062.html
 Disallow: /page*/
 
 
-Sitemap: http://blog.guozengxin.cn/sitemap.xml
+Sitemap: http://guozengxin.me/sitemap.xml

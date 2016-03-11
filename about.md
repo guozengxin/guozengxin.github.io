@@ -17,7 +17,7 @@ group: navigation
 
 #### 相关链接：
 
-- 博客: <http://blog.guozengxin.cn>
+- 博客: <http://guozengxin.me>
 - 微博: <http://weibo.com/xdxiaoxin>
 - 邮箱: [guozengxin@outlook.com][email]
 - github: <https://github.com/guozengxin>
