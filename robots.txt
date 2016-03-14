@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /baidu_verify_zh0w7CmlUA.html
 Disallow: /e907773d09bb861544a4d1e3a0d61c61.txt
 Disallow: /google37da3d80678ba062.html
+Disallow: /googlec47cfd09b4a836b4.html
 Disallow: /page*/
 
 
