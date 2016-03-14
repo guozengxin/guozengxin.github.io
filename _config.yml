@@ -5,6 +5,7 @@ highlighter: rouge
 paginate: 8
 timezone: Asia/Shanghai
 excerpt_separator: "<!-- more -->"
+gems: [jekyll-paginate]
 
 # markdown设置
 markdown: kramdown
@@ -15,7 +16,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
+  enable_coderay: false
 
   coderay:
     coderay_wrap: div
