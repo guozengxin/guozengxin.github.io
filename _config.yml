@@ -1,11 +1,12 @@
 # 站点设置(jekyll自带)
-permalink: /:year/:month/:day/:title 
+permalink: /:year/:month/:day/:title/
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "code"]
 highlighter: rouge
 paginate: 8
 timezone: Asia/Shanghai
 excerpt_separator: "<!-- more -->"
-gems: [jekyll-paginate]
+gems:
+  - jekyll-paginate
 
 # markdown设置
 markdown: kramdown
