@@ -11,10 +11,10 @@ comments: true
 
 在[hadoop][]的[Java API][javaapi]中，我们很容易可以通过下面的代码，来给task增加一个Counter:
 
-{% highlight java %}
+```java
 // 添加一个groupName为"group" counterName为"counter"的Counter
 context.getCounter("group", "counter").increment(1l);
-{% endhighlight %}
+```
 
 但是在[Hadoop Streaming][streaming]中怎么去添加Counter呢？在[Hadoop Streaming的介绍][streaming]中，可以找到：
 
@@ -26,17 +26,17 @@ context.getCounter("group", "counter").increment(1l);
 
 在map或者reduce程序的任意位置输出如下代码，就可以添加一个`groupName`为`group`，counterName为`counter`的Counter，每次打印时其值会加1.
 
-{% highlight cpp %}
+```cpp
 // groupName: group  counterName: counter
 fprintf(stderr, "reporter:counter:group,counter,1"); 
-{% endhighlight %}
+```
 
 #### Python版
 
-{% highlight python %}
+```python
 // groupName: group  counterName: counter
 print >> sys.stderr, 'reporter:counter:group,counter,1'
-{% endhighlight %}
+```
 
 其他编程语言的操作类似。
 

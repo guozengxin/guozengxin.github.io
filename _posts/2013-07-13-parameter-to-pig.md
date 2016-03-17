@@ -11,9 +11,9 @@ comments: true
 
 采用-p传递参数，每一个变量前都要加-p:
 
-{% highlight bash %}
+```bash
 $ pig -p DATE=`date +%Y-%m-%d` daily.pig
-{% endhighlight %}
+```
 
 <!-- more -->
 pig引用参数的方式和shell相同：
@@ -28,18 +28,18 @@ pig引用参数的方式和shell相同：
 ### 由文件传参
 
 
-{% highlight bash %}
+```bash
 #Param file
 YEAR=2009-
 MONTH=12-
 DAY=17
 DATE=$YEAR$MONTH$DAY
-{% endhighlight %}
+```
 
 调用方式：
 
-{% highlight bash %}
+```bash
 pig -param_file daily.params daily.pig
-{% endhighlight %}
+```
 
 pig脚本中调用参数和直接传参的调用方式相同

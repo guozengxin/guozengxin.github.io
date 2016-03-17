@@ -21,9 +21,9 @@ comments: true
 
 **安装方法**：
 
-{% highlight python %}
+```python
 python setup.py install
-{% endhighlight %}
+```
 
 **依赖的库**: [lxml][]
 
@@ -41,23 +41,23 @@ python setup.py install
 
 中文词语: iciba的中文词语可以和英文词语一样，即<http://www.iciba.com/每个>，但是为了避免编码问题，我将中文的编码都统一转为`utf-8`:
 
-{% highlight python %}
+```python
 url = 'http://www.iciba.com/' + word.decode(outputEncoding).encode('utf8')
-{% endhighlight %}
+```
 
 ### 下载翻译结果
 
 下载页面用`urllib2`来实现很简单，下面的代码可以实现最简单的下载功能：
 
-{% highlight python %}
+```python
 import urllib2
 response = urllib2.urlopen('http://www.iciba.com/every')
 data = response.read()
-{% endhighlight %}
+```
 
 我的代码里添加了超时、异常处理、解压等功能：[源文件github地址](https://github.com/guozengxin/ldict/blob/master/ldutil/htmlfetcher.py)
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 # encoding=utf-8
 
@@ -102,7 +102,7 @@ def http_get(url, referer=None):
         except:
             sys.stderr.write('unnkown error in http_get')
     return data
-{% endhighlight %}
+```
 
 ## 3. 从html文件解析翻译结果
 
@@ -110,7 +110,7 @@ def http_get(url, referer=None):
 
 如下的简单示例即可简单的从网页中提取数据：
 
-{% highlight python %}
+```python
 import StringIO
 from lxml import etree
 import urllib2
@@ -119,13 +119,13 @@ parser = etree.HTMLParser()
 data = urllib2.urlopen('http://www.baidu.com').read()
 tree = etree.parse(StringIO.StringIO(data), parser)
 print tree.xpath('//title')[0].text.encode('gbk')
-{% endhighlight %}
+```
 
 上述代码可以提取到百度首页的title:
 
-{% highlight text %}
+```text
 百度一下，你就知道
-{% endhighlight %}
+```
 
 在[ldict][]项目中我写了一个用于提取解析html的类: [htmlparser](https://github.com/guozengxin/ldict/blob/master/ldutil/htmlparser.py).
 

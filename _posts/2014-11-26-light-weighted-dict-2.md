@@ -15,9 +15,9 @@ comments: true
 
 **安装方法**：
 
-{% highlight python %}
+```python
 python setup.py install
-{% endhighlight %}
+```
 
 **依赖的库**: [lxml][]
 
@@ -29,9 +29,9 @@ python setup.py install
 
 为了使输出的翻译结果更加清晰明了，加入了彩色文字输出的代码。在终端上输出彩色文字的格式为：
 
-{% highlight bash %}
+```bash
 echo -e "\033[0;32m Hello World. \033[0m \n"
-{% endhighlight %}
+```
 
 这段代码可以在终端上输出绿色的Hello World，其中`\033`是开始标记，`[0;`是ANSI控制码，`32`表示的是字的颜色，`\033[0m`表示清除颜色设置，如果不清除会影响后续输出的颜色。
 
@@ -80,7 +80,7 @@ echo -e "\033[0;32m Hello World. \033[0m \n"
 
 以下是我实现的获取字符的函数：
 
-{% highlight python %}
+```python
 import termios, tty
 class _Getch:
     def __call__(self, length=1):
@@ -92,7 +92,7 @@ class _Getch:
         finally:
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
         return ch
-{% endhighlight %}
+```
 
 下面实现了一个从命令行获取一个单词的函数：
 在获取一个字符的时候，我在函数中对下面几个字符做了处理：
@@ -103,7 +103,7 @@ class _Getch:
 4. 如果是退出符(`\03\04`)，则结束程序，这两个字符分别是`Ctrl+C`和`Ctrl+D`。
 5. 如果新字符的长度为3，则有可能是向上键(`\x1b[A`)或者(`向下键`)，对这两种字符来回顾历史记录。
 
-{% highlight python %}
+```python
 getch = _Getch()
 def myinput(flag='> '):
     chars = []
@@ -150,7 +150,7 @@ def myinput(flag='> '):
         return historyList[nowIndex]
     else:
         return ''.join(chars)
-{% endhighlight %}
+```
 
 ## 总结
 

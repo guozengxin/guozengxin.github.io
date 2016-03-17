@@ -19,7 +19,7 @@ comments: true
 
 下面是我的代码：
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 # https://www.hackerrank.com/challenges/predicting-house-prices
 
@@ -50,7 +50,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-{% endhighlight %}
+```
 
 
 [hackerrank]: https://www.hackerrank.com/

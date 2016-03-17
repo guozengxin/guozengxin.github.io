@@ -33,12 +33,12 @@ comments: true
 
 在网上查资料，发现直接将path写在crontab中就可以设置crontab中的环境变量。在crontab文件的开头设置以下选项：
 	
-{% highlight bash %}
+```bash
 SHELL=/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
 HOME=/
-{% endhighlight %}
+```
 
 - `SHELL`设置当前bash
 - `PATH`设置当前环境变量

@@ -17,7 +17,7 @@ comments: true
 
 如写一个示例遍历一个list，和**ipairs**不同，这个迭代器不返回索引，只返回值：
 
-{% highlight lua %}
+```lua
 function values(t)
     local i = 0
     return function () 
@@ -25,7 +25,7 @@ function values(t)
         return t[i]
     end
 end
-{% endhighlight %}
+```
 
 <!-- more -->
 
@@ -33,7 +33,7 @@ end
 
 在一个**while**循环中使用它：
 
-{% highlight lua %}
+```lua
 t = {10, 20, 30}
 iter = values(t)
 while true do
@@ -41,22 +41,22 @@ while true do
     if element == nil then break end
     print(element)
 end
-{% endhighlight %}
+```
 
 在**泛型for**中使用迭代器更为简便：
 
-{% highlight lua %}
+```lua
 t = {10, 20, 30}
 for element in values(t) do
     print(element)
 end
-{% endhighlight %}
+```
 
 泛型for为迭代循环处理所有的簿记(bookkeeping)：首先调用工厂函数创建一个迭代器，内部保留迭代函数（因此不需要iter变量），然后在每次循环中调用迭代器，当迭代器返回nil时自动结束。
 
 下面看一个高级点的示例，遍历输入文件中的所有单词。为了实现这个目的，我们保留了两个状态，当前行和当前行的当前位置，函数主体调用了`string.find`，这个函数从一行找到一个单词，可以指定开始位置，`%w+`表示查找单词，类似正则表达式，函数返回查找到内容的开始位置和结束位置。
 
-{% highlight lua %}
+```lua
 function allwords()
     local line = io.read()
     local pos = 1
@@ -74,15 +74,15 @@ function allwords()
         return nil
     end
 end
-{% endhighlight %}
+```
 
 尽管迭代器很复杂，但是使用时依然很简单：
 
-{% highlight lua %}
+```lua
 for word in allwords() do
     print(word)
 end
-{% endhighlight %}
+```
 
 ## 泛型for的语义
 
@@ -90,27 +90,27 @@ end
 
 在前面示例中可以看到，泛型for保存了迭代器的状态。更加准确的说，它保存了三个值：迭代器函数，状态常量和一个控制变量。泛型for的语义是：
 
-{% highlight lua %}
+```lua
 for <var-list> in <exp-list> do
     <body>
 end
-{% endhighlight %}
+```
 
 `var-list`是变量列表，可以有一个或者多个变量，用逗号分隔；`exp-list`是表达式列表，可以有一个或者多个表达式，用逗号分隔。通常表达式列表只有一个工厂函数。在下面的示例中，`k, v`是变量列表，`pairs(t)`是表达式列表。
 
-{% highlight lua %}
+```lua
 for k, v in pairs(t) do
     print(k, v)
 end
-{% endhighlight %}
+```
 
 变量列表也可以只有一个变量：
 
-{% highlight lua %}
+```lua
 for line in io.lines() do
     io.write(line, "\n")
 end
-{% endhighlight %}
+```
 
 变量列表的第一个变量称为**控制变量**,它的值如果为`nil`，表示循环结束。
 
@@ -123,15 +123,15 @@ for循环的运行步骤：
 
 更精确的来说,下面的结构：
 
-{% highlight lua %}
+```lua
 for var_1, ..., var_n in <explist> do
     <block>
 end
-{% endhighlight %}
+```
 
 和下面的代码逻辑相同：
 
-{% highlight lua %}
+```lua
 do
     local _f, _s, _var = <explist>
     while true do
@@ -141,7 +141,7 @@ do
         <block>
     end
 end
-{% endhighlight %}
+```
 
 如果迭代函数是`f`, 状态常量是`s`, 并且控制变量的初始值是`a0`, 控制变量将做如下循环：`a1 = f(s, a0)`，`a2 = f(s, a1)` ... 直到`ai`为nil，如果**for**有其它值，它们将通过调用函数`f`返回。
 
@@ -151,16 +151,16 @@ end
 
 刚刚看到，**for循环**调用迭代器函数要使用两个参数：状态常量和控制变量。一个无状态迭代器产生下一个元素只使用这两个值。典型的示例是`ipairs`：
 
-{% highlight lua %}
+```lua
 a = {'one', 'two', 'three'}
 for i, v in ipairs(a) do
     print(i, v)
 end
-{% endhighlight %}
+```
 
 迭代的状态包括被遍历的表（状态常量）、当前索引（控制变量）。我们可以自己实现这个迭代器：
 
-{% highlight lua %}
+```lua
 local function iter(a, i)
     i = i + 1
     local v = a[i]
@@ -172,31 +172,31 @@ end
 function ipairs(a)
     return iter, a, 0
 end
-{% endhighlight %}
+```
 
 当Lua在for循环中，调用`ipairs(a)`时，它首先得到3个值：迭代函数`iter`，状态常量`a`，控制变量的初始状态`0`。然后Lua调用`iter(a,0)`，将得到返回值`1, a[1]`，下一次调用`iter(a, 1)`，返回`2, a[2]`,直到循环结束。
 
 `pairs`函数，是一个迭代器遍历table中的所有元素。除了迭代器函数是`next`函数：
 
-{% highlight lua %}
+```lua
 function pairs(t)
     return next, t, nil
 end
-{% endhighlight %}
+```
 
 函数`next(t, k)`，`k`是表`t`中的一个key，返回下一个key以及对应的value。`next(t, nil)`将返回第一个key-value对。在循环中也可以直接调用`next`函数：
 
-{% highlight lua %}
+```lua
 for k, v in next, t do
     <loop body>
 end
-{% endhighlight %}
+```
 
 for循环会自动适应参数，所以这个for循环会获取到`next, t, nil`，可以看到和`pairs(t)`的是完全一致的。
 
 用无状态的迭代器来遍历一个链表也是比较有趣的：
 
-{% highlight lua %}
+```lua
 local function getnext(list, node)
     if not node then
         return list
@@ -208,7 +208,7 @@ end
 function traverse(list)
     return getnext, list, nil
 end
-{% endhighlight %}
+```
 
 技巧是使用链表的主节点`list`作为状态常量，然后用当前值作为控制变量。当第一次调用`getnext`的时候，`node`是nil，因此返回`list`作为第一个元素。在接下来的调用中，`node`参数不是nil，因此返回`node.next`。
 
@@ -218,7 +218,7 @@ end
 
 作为这个技术的一个示例，我们重写函数`allwords`，来遍历输入文件中的所有单词。这次我们用一个table来保存`line`和`pos`变量。
 
-{% highlight lua %}
+```lua
 local iterator
 
 function allwords()
@@ -239,7 +239,7 @@ function iterator(state)
     end
     return nil
 end
-{% endhighlight %}
+```
 
 无论何时，都尽量尝试去写无状态的迭代器，而是由for来保存状态，因为创建对象花费的代价要高。如果不能用无状态迭代器来实现，也要用闭包去实现，因为通常情况下闭包要比创建table的代价小；另外处理**non-local variables**的速度要比table快。后续章节中将会介绍用协程创建迭代器，这种方式将更强，但更复杂。
 
@@ -251,7 +251,7 @@ end
 
 下面看一个具体的示例：
 
-{% highlight lua %}
+```lua
 function allwords(f)
     for l in io.lines() do
         for w in string.gfind(l, '%w+') do
@@ -259,29 +259,29 @@ function allwords(f)
         end
     end
 end
-{% endhighlight %}
+```
 
 如果我们要把单词打印出来，只需要：
 
-{% highlight lua %}
+```lua
 allwords(print)
-{% endhighlight %}
+```
 
 更一般的做法是用匿名函数作为参数，下面示例打印出单词**helllo**出现的次数：
 
-{% highlight lua %}
+```lua
 local count = 0
 allwords(function (w)
     if w == 'hello' then count = count + 1 end
 end)
 print(count)
-{% endhighlight %}
+```
 
 用for结构也可以完成同样的任务：
 
-{% highlight lua %}
+```lua
 local count = 0
 for w in allwords() do
     if w == 'hello' then count = count + 1 end
 end
-{% endhighlight %}
+```

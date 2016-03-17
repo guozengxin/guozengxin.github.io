@@ -24,30 +24,30 @@ screen是一款由 GNU 计划开发的用于命令行终端切换的自由软件
 1. 会话操作
 
 - 直接用`screen`命令可以创建一个会话。
-{% highlight bash %}
+```bash
 $ screen
-{% endhighlight %}
+```
 
 - `screen -S`命令可以为会话指定一个别名。
 
-{% highlight bash %}
+```bash
 $ screen -S test
-{% endhighlight %}
+```
 
 - `screen -r`命令可以进入某一个会话。
 
-{% highlight bash%}
+```bash
 $ screen -ls
 There are screens on:
 	2038.test       (Detached)
 1 Sockets in /var/run/screen/S-root.
 $ screen -r test
 $
-{% endhighlight %}
+```
 
 `screen -r test`或者`screen -r 2038`都可以进入 test 这个会话。事实上，输入的参数是模糊匹配的，只要输入的参数只能匹配一个会话，都可以成功进入 ，如`screen -r tes`或者`screen -r 203`。但是如果匹配到多个会话就会失败:
 
-{% highlight bash %}
+```bash
 $ screen -ls    
 There are screens on:
 	10730.tes       (Detached)
@@ -58,7 +58,7 @@ There are several suitable screens on:
 	10730.tes       (Detached)
 	2038.test       (Detached)
 Type "screen [-d] -r [pid.]tty.host" to resume one of them.
-{% endhighlight %}
+```
 
 - `screen -d`命令可以在外部暂离一个会话。
 
@@ -72,7 +72,7 @@ Type "screen [-d] -r [pid.]tty.host" to resume one of them.
 
 - `C-a ?`显示命令帮助信息，帮助中列出了命令及其对应的快捷键，如下所示。前方的单词都可以在`C-a :`后输入进行操作，和快捷键作用相同，如`C-a :detach`等同于`C-a d`。
 
-{% highlight bash %}
+```bash
 break       ^B b          license     ,             removebuf   =         
 clear       C             lockscreen  ^X x          reset       Z         
 colon       :             log         H             screen      ^C c      
@@ -86,7 +86,7 @@ flow        ^F f          other       ^A            vbell       ^G
 focus       ^I            pow_break   B             version     v         
 hardcopy    h             pow_detach  D             width       W         
 help        ?             prev        ^H ^P p ^?    windows     ^W w      
-{% endhighlight %}
+```
 
 2. 窗口操作
 

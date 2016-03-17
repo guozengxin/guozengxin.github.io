@@ -14,7 +14,7 @@ comments: true
 <!-- more -->
 
 本文中的C代码：
-{% highlight c++ %}
+```c++
 /* File : example.c */
 
 #include <time.h>
@@ -35,13 +35,13 @@ char *get_time()
 	time(&ltime);
 	return ctime(&ltime);
 }
-{% endhighlight %}
+```
 
 ### 接口文件
 
 要将上述c代码放到你喜欢的脚本语言中执行，你需要为它写一个接口文件。上述c函数的接口文件可以这样写：要将上述c代码放到你喜欢的脚本语言中执行，你需要为它写一个接口文件。上述c函数的接口文件可以这样写：要将上述c代码放到你喜欢的脚本语言中执行，你需要为它写一个接口文件。上述c函数的接口文件可以这样写：
 
-{% highlight python %}
+```python
 /* example.i */
 %module example
 %{
@@ -56,21 +56,21 @@ extern double My_variable;
 extern int fact(int n);
 extern int my_mod(int x, int y);
 extern char *get_time();
-{% endhighlight %}
+```
 
 ### 编译为python语言
 
 用SWIG把C语言编译为python模块很简单，只需要执行以下步骤：
 
-{% highlight bash %}
+```bash
 $ swig -python example.i
 $ gcc -fPIC -I/usr/include/python2.6 -c example_wrap.c -o example_wrap.o
 $ gcc -fPIC -c example.c -o example.o
 $ gcc -shared example.o example_wrap.o -o _example.so
-{% endhighlight %}
+```
 
 然后可以用以下方法调用上述模块：
-{% highlight python %}
+```python
 >>> import example
 >>> example.fact(5)
 120
@@ -78,7 +78,7 @@ $ gcc -shared example.o example_wrap.o -o _example.so
 1
 >>> example.get_time()
 'Tue Jul 23 23:10:17 2013\n'
-{% endhighlight %}
+```
 
 ### 参考
 

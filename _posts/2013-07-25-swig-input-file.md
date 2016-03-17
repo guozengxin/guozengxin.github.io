@@ -11,7 +11,7 @@ comments: true
 
 使用swig将C或C++语言编译为其他类型语言的时候，一般需要一个声明文件来定义接口。这个文件用.i或者.swg结尾，通常为具有以下形式：
 
-{% highlight c++ %}
+```c++
 %module mymodule 
 %{
 #include "myheader.h"
@@ -20,21 +20,21 @@ comments: true
 int foo;
 int bar(int x);
 ...
-{% endhighlight %}
+```
 
 <!-- more -->
 
 可以用以下方式运行swig，来使用这个文件：
 
-{% highlight bash %}
+```bash
 swig [ options ] filename
-{% endhighlight %}
+```
 
 例如要编译为python语言，可以：
 
-{% highlight bash %}
+```bash
 swig -python xxx.i
-{% endhighlight %}
+```
 
 ### module
 
@@ -43,21 +43,21 @@ swig -python xxx.i
 1. **在接口文件中指定**
 
 
-{% highlight c++ %}
+```c++
 %module(option1="value1",option2="value2",...) modulename
-{% endhighlight %}
+```
 
 或者不指定选项：
 
-{% highlight c++ %}
+```c++
 %module mymodule
-{% endhighlight %}
+```
 
 2. **用命令行参数指定**
 
-{% highlight bash %}
+```bash
 swig -python xxx.i -module modulename
-{% endhighlight %} 
+``` 
 
 ### 注释
 

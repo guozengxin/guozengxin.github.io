@@ -99,67 +99,67 @@ comments: true
 
 (1). 将本地的/dev/hdb整盘备份到/dev/hdd
 
-{% highlight bash %}
+```bash
 dd if=/dev/hdb of=/dev/hdd
-{% endhighlight %}
+```
 
 (2). 备份磁盘开始的512个字节大小的MBR信息到指定文件
 
-{% highlight bash %}
+```bash
 dd if=/dev/hda of=/root/image count=1 bs=512
-{% endhighlight %}
+```
 
 (3). 将备份的MBR信息写到磁盘开始部分
 
-{% highlight bash %}
+```bash
 dd if=/root/image of=/dev/had
-{% endhighlight %}
+```
 
 (4). 利用/dev/zero文件，创建一个大小为256M的文件
 
-{% highlight bash %}
+```bash
 dd if=/dev/zero of=/swapfile bs=1024 count=262144
-{% endhighlight %}
+```
 
 (5). 利用随机的数据填充硬盘，用来销毁数据
 
-{% highlight bash %}
+```bash
 dd if=/dev/urandom of=/dev/hda1
-{% endhighlight %}
+```
 
 (6). 测试硬盘的读写速度
 
-{% highlight bash %}
+```bash
 dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.file
 dd if=/root/1Gb.file bs=64k | dd of=/dev/null
-{% endhighlight %}
+```
 
 (7). 确定硬盘的最佳块大小（给`bs`设置不同大小的数值来测试读写速度）
 	
-{% highlight bash %}
+```bash
 dd if=/dev/zero bs=1024 count=1000000 of=/root/1Gb.file
 dd if=/dev/zero bs=2048 count=500000 of=/root/1Gb.file
 dd if=/dev/zero bs=4096 count=250000 of=/root/1Gb.file
 dd if=/dev/zero bs=8192 count=125000 of=/root/1Gb.file
-{% endhighlight %}
+```
 
 (8). 将 ASCII 文本文件转化为 EBCDIC
 
-{% highlight bash %}
+```bash
 dd if=text.ascii of=text.ebcdic conv=ebcdic
-{% endhighlight %}
+```
 
 (9). 将变长记录的 ASCII 文件 /etc/passwd 转换为一个固定长度为 132 字节的 EBCDIC 纪录
 
-{% highlight bash %}
+```bash
 dd if=/etc/passwd cbs=132 conv=ebcdic of=/tmp/passwd.ebcdic
-{% endhighlight %}
+```
 
 (10). 将 dd 命令作为一个过滤器使用（将目录列表显示为大写字母）
 
-{% highlight bash %}
+```bash
 ls -l | dd  conv=ucase
-{% endhighlight %}
+```
 
 ### 参考
 

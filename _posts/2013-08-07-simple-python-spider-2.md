@@ -21,20 +21,20 @@ urllib2是python中的一个标准模块，用于获取url。 它提取一系列
 
 在python2.6之前，urllib2模块的API不支持Timeout设置，如果确实需要设置Timeout，只能通过下面的办法：更新socket的全局超时设置。
 
-{% highlight python %}
+```python
 import urllib2
 import socket
 
 socket.setdefaulttimeout(10) # 10 秒钟后超时
 urllib2.socket.setdefaulttimeout(10) # 另一种方式
-{% endhighlight %}
+```
 
 从python2.6开始，[**urllib2.urlopen()**](http://docs.python.org/2/library/urllib2.html#urllib2.urlopen)函数可以直接用参数设置Timeout
 
-{% highlight python %}
+```python
 import urllib2
 response = urllib2.urlopen('http://www.sogou.com', timeout=10) # 设置超时为10秒
-{% endhighlight %}
+```
 
 #### 设置HTTP Header
 
@@ -42,24 +42,24 @@ response = urllib2.urlopen('http://www.sogou.com', timeout=10) # 设置超时为
 
 直接在构造函数中设置，用一个dict类型的变量表示headers:
 
-{% highlight python %}
+```python
 import urllib2
 
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22'}
 request = urllib2.Request('http://www.sogou.com', headers=headers)
 response = urllib2.urlopen(request, timeout=10)
-{% endhighlight %}
+```
 
 也可以用[**urllib2.Request.add_header()**](http://docs.python.org/2/library/urllib2.html#urllib2.Request.add_header)函数来设置：
 
-{% highlight python %}
+```python
 import urllib2
 
 ua = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22'
 request = urllib2.Request('http://www.sogou.com')
 request.add_header('User-Agent', ua)
 response = urllib2.urlopen(request, timeout=10)
-{% endhighlight %}
+```
 
 #### 自动解压编码
 
@@ -67,19 +67,19 @@ response = urllib2.urlopen(request, timeout=10)
 
 处理编码的类为ContentEncodingProcessor(具体实现后面介绍)，用如下方式来加入到下载器：
 
-{% highlight python %}
+```python
 import urllib2
 
 opener = urllib2.build_opener(ContentEncodingProcessor, urllib2.HTTPHandler)
 request = urllib2.Request('http://www.sogou.com')
 response = opener.open(request, timeout=10)
-{% endhighlight %}
+```
 
 其中，[**urllib2.build_opener**](http://docs.python.org/2/library/urllib2.html#urllib2.build_opener)函数返回接受一个或多个handler参数，返回一个[**OpenerDirector**](http://docs.python.org/2/library/urllib2.html#urllib2.OpenerDirector)实例。用该实例创建的连接会应用所设置的handler.
 
 ### downloader模块代码
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 #encoding=utf-8
 
@@ -148,13 +148,13 @@ class Downloader:
 			except:
 				logger.error('unknown error occured while read response')
 		return data
-{% endhighlight %}
+```
 
 上面的代码中，settings模块是一个全局的设置文件，用于设置一些常用的参数。
 
 ### gzipSupport模块代码
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 
 from StringIO import StringIO
@@ -190,7 +190,7 @@ def deflate(data):	# zlib only provides the zlib compress format, not the deflat
 		return zlib.decompress(data, -zlib.MAX_WBITS)
 	except zlib.error:
 		return zlib.decompress(data)
-{% endhighlight %}
+```
 
 在http_request函数中，设置Accpet-Encoding为可接受的网页类型。在http_response函数中，根据返回的content-encoding的编码方式来解压数据。
 

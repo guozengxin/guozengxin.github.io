@@ -27,23 +27,23 @@ comments: true
 
 #### 示例1
 
-{% highlight python %}
+```python
 >>> a = [1, 2, 3, 4, 5, 6, 7]
 >>> b = filter(lambda x:x>5, a)
 >>> print b
 [6, 7]
-{% endhighlight %}
+```
 
 上面示例用到**lambda**表达式，作用是返回*x>5*的值，filter将列表*a*中大于5的值保留下来了。
 
 #### 示例2
 
-{% highlight python %}
+```python
 >>> a = [0, False, 1, 2, 3, 4, 5, 6, 7] 
 >>> b = filter(None, a)
 >>> print b
 [1, 2, 3, 4, 5, 6, 7]
-{% endhighlight %}
+```
 
 这个示例演示了*function*为None的情况，列表a中所有为假的元素都被过滤掉了。
 
@@ -59,36 +59,36 @@ comments: true
 
 #### 示例1
 
-{% highlight python %}
+```python
 >>> a = [0, 1, 2, 3, 4, 5]    
 >>> b = map(lambda x:x+3, a) 
 >>> print b
 [3, 4, 5, 6, 7, 8]
-{% endhighlight %}
+```
 
 将列表*a*中所有的元素都加3.
 
 #### 示例2
 
-{% highlight python %}
+```python
 >>> a = [1, 2, 3]
 >>> b = [4, 5, 6] 
 >>> c = map(lambda x,y:x+y, a, b)
 >>> print c
 [5, 7, 9]
-{% endhighlight %}
+```
 
 这个例子中传入了2个列表，将对应列相加。
 
 #### 示例3
 
-{% highlight python %}
+```python
 >>> a = [1, 2, 3]                
 >>> b = [4, 5, 6]                
 >>> c = map(None, a, b)                
 >>> print c
 [(1, 4), (2, 5), (3, 6)]
-{% endhighlight %}
+```
 
 *function*参数为*None*的情况。
 
@@ -106,23 +106,23 @@ comments: true
 
 #### 示例1
 
-{% highlight python %}
+```python
 >>> a = [1, 2, 3, 4, 5]
 >>> b = reduce(lambda x,y:x*y, a) 
 >>> print b
 120
-{% endhighlight %}
+```
 
 求列表中所有元素的乘积。
 
 #### 示例2
 
-{% highlight python %}
+```python
 >>> a = [1, 2, 3, 4, 5]          
 >>> b = reduce(lambda x,y:x*y, a, 5)
 >>> print b
 600
-{% endhighlight %}
+```
 
 当指定初始值时，变为(5 * 1 * 2 * 3 * 4 * 5).
 

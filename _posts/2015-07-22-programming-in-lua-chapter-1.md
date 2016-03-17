@@ -13,14 +13,14 @@ comments: true
 
 在lua交互模式下输入代码，或者将以下代码保存到文件中，然后用`lua a.lua`执行就可以输出结果。
 
-{% highlight lua %}
+```lua
 print('Hello World!')
-{% endhighlight %}
+```
 
 ### 求阶乘
 
 这是一个稍微复杂点的例子，输入一个数字然后求阶乘：
-{% highlight lua %}
+```lua
 #!/usr/bin/env lua
 
 function fact(n)
@@ -36,7 +36,7 @@ end
 print("enter a number: ")
 a = io.read('*n')
 print(fact(a))
-{% endhighlight %}
+```
 
 <!-- more -->
 
@@ -46,34 +46,34 @@ print(fact(a))
 
 在lua中，语句可以用分号分隔，也可以不用。但是推荐单行中的多个语句用分号分隔。如：
 
-{% highlight lua %}
+```lua
 a = 1
 b = a * 2
 a = 1 b = a * 2    -- ugly
 a = 1; b = a * 2   -- recommend
-{% endhighlight %}
+```
 
 在命令行下，python一样，输入`lua`可进入交互模式。在交互模式下每输入一行代码是一个chunk, 会被立即执行：
 
-{% highlight lua %}
+```lua
 $ lua
 Lua 5.1.4  Copyright (C) 1994-2008 Lua.org, PUC-Rio
 > print('hello')
 hello
 > 
-{% endhighlight %}
+```
 
 用`-i`命令可以执行一段代码后进行交互模式，这种方法在调试和测试的时候非常有用:
 
-{% highlight bash %}
+```bash
 $ lua -i my.lua
-{% endhighlight %}
+```
 
 用`dofile()`函数也可以达到同样的效果：
 
-{% highlight lua %}
+```lua
 > dofile('my.lua')
-{% endhighlight %}
+```
 
 `dofile()`函数在编写代码时很有用，打开两个窗口，一个窗口用编辑器写代码，另一个打开lua的交互模式，当编辑器中保存文件之后，可以在交互模式下执行`dofile('a.lua')`加载最新的代码用于调试。
 
@@ -84,13 +84,13 @@ lua的变量命名和c差不多，可以用数字、字母、下划线来做为�
 
 下面的单词是语言预留的，不能用做变量：
 
-{% highlight lua %}
+```lua
 and		break	do		else	elseif
 end		false	goto	for	function
 if		in		local	nil	not
 or		repeat	return	then 	true
 until	while
-{% endhighlight %}
+```
 
 ### 注释
 
@@ -99,29 +99,29 @@ until	while
 
 如：
 
-{% highlight lua %}
+```lua
 -- comment
 --[[
 print(10);
 --]]
-{% endhighlight %}
+```
 
 ## 全局变量
 
 在lua中，全局变量不需要声明，只要去使用就可以了。而且直接使用一个没有初始化的变量是不会报错的：
 
-{% highlight lua %}
+```lua
 print(b)  -- nil
 b = 10
 print(b)  -- 10
-{% endhighlight %}
+```
 
 将`nil`赋值给变量可以销毁这个变量，lua后续会回收它占用的内存：
 
-{% highlight lua %}
+```lua
 b = nil
 print(b)  -- nil
-{% endhighlight %}
+```
 
 ## 运行
 

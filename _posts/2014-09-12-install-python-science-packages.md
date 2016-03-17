@@ -31,21 +31,21 @@ python拥有着众多的开源包，其中用于科学计算的包也是非常�
 
 在线安装: 下载文件[get-pip.py](https://bootstrap.pypa.io/get-pip.py)，然后执行
 
-{% highlight python %}
+```python
 python get-pip.py
-{% endhighlight %}
+```
 
 Ubuntu或者Debian:
 
-{% highlight bash %}
+```bash
 sudo apt-get install python-pip
-{% endhighlight %}
+```
 
 Fedora:
 
-{% highlight bash %}
+```bash
 yum install python-pip
-{% endhighlight %}
+```
 
 ### 安装python包
 
@@ -53,47 +53,47 @@ yum install python-pip
 
 numpy直接用pip安装即可：
 
-{% highlight python %}
+```python
 pip install numpy
-{% endhighlight %}
+```
 
 #### lapack, blas
 
 lapack, blas这两个包不是python的包，是scipy依赖的包，可以直接用yum安装：
 
-{% highlight bash %}
+```bash
 yum install blas-devel lapack-devel
-{% endhighlight %}
+```
 
 或者apt-get安装：
 
-{% highlight bash %}
+```bash
 apt-get install libblas-dev liblapack-dev
-{% endhighlight %}
+```
 
 #### matplotlib, sympy, scipy
 
 matplotlib, sympy, scipy可以直接用pip安装, matplotlib的使用需要显卡支持，如果是在一台没有显卡的linux服务器上操作的话，这个包是无法使用的(可以正常安装)。
 
-{% highlight python %}
+```python
 pip install matplotlib
 pip install sympy
 pip install scipy
-{% endhighlight %}
+```
 
 #### ipython
 
 ipython可以直接用pip安装:
 
-{% highlight python %}
+```python
 pip install ipython
-{% endhighlight %}
+```
 
 但是，现在最新版本的ipython2.x版本是不支持python2.6及以下的版本的。如果python是2.6或者以下版本，可以用以下的方式安装低版本的ipython:
 
-{% highlight python %}
+```python
 pip install -Iv "https://pypi.python.org/packages/source/i/ipython/ipython-1.2.1.tar.gz#md5=4ffb36697f7ca8cb4a2de0f5b30bc89c"
-{% endhighlight %}
+```
 
 [python-scipy]: http://sebug.net/paper/books/scipydoc/ "用Python做科学计算"
 [numpy]: http://www.numpy.org/ "numpy"

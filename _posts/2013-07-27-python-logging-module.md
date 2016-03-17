@@ -13,7 +13,7 @@ comments: true
 
 先看一个简单示例。我在最初了解logging模块时，都是这样简单进行设置。
 
-{% highlight python %}
+```python
 #logging_example1.py
 import logging
 logging.basicConfig(level = logging.INFO, format = '[%(asctime)s %(levelname)s] %(message)s', datefmt='%Y%m%d %H:%M:%S')
@@ -22,7 +22,7 @@ logging.info('info log')
 logging.warning('warning log')
 logging.error('error log')
 logging.critical('critial log')
-{% endhighlight %}
+```
 
 其实，在程序规模较小时，只需要这样简单设置即可。上面的代码会输出：
 
@@ -38,14 +38,15 @@ logging.critical('critial log')
 ### 打印日志到文件
 
 下面的代码可以将日志输出到文件中
+
+```python
 #logging_example2.py
-{% highlight python %}
 import logging
 logging.basicConfig(filename='example.log',level=logging.DEBUG)
 logging.debug('This message should go to the log file')
 logging.info('So should this')
 logging.warning('And this, too')
-{% endhighlight %}
+```
 
 会在文件中显示内容：
 
@@ -61,27 +62,27 @@ logging模块中的日志分为5个级别, 从高到低依次是：CRITICAL > ER
 
 * 通过命令行参数指定：
 
-{% highlight python %}
+```python
 python --log=INFO xxx.py
-{% endhighlight %}
+```
 
 * 如上面示例程序，通过`basicConfig()`函数指定
 
-{% highlight python %}
+```python
 logging.basicConfig(filename='example.log',level=logging.DEBUG)
-{% endhighlight %}
+```
 
 ### 改变日志格式
 
 `basicConfig()`函数可以设置日志的显示格式：
 
-{% highlight python %}
+```python
 import logging
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 logging.debug('This message should appear on the console')
 logging.info('So should this')
 logging.warning('And this, too')
-{% endhighlight %}
+```
 
 可以得到输出：
 
@@ -188,11 +189,11 @@ logging.warning('And this, too')
 
 logging默认的时间格式是ISO8601, 如果你对默认的时间格式不满意，可以在配置函数中自己设置：
 
-{% highlight python %}
+```python
 import logging
 logging.basicConfig(format='%(asctime)s %(message)s', level=logging.DEBUG, datefmt='%Y%m%d %H:%M:%S')
 logging.debug('show time')
-{% endhighlight %}
+```
 
 将会显示：
 

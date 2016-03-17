@@ -56,26 +56,26 @@ rsync命令可以通过配置文件来实现不用输入密码来同步数据，
 `find`命令是linux下一个十分强大的文件查找命令，接下来将演示如何进行：
 
 下面的find命令在当前目录下查找3天以前的所有文件：
-{% highlight sh %}
+```sh
 find . -mtime +3 -type f > files.list
-{% endhighlight %}
+```
 
 下面的rsync命令在读取需要同步的文件列表，同步到远程机器：
-{% highlight sh %}
+```sh
 rsync -vP --remove-source-files --files-from=./files.list . 10.134.0.1::root/path-to
-{% endhighlight %}
+```
 
 如果觉得写文件太麻烦，可以把两个命令合起来：
-{% highlight sh %}
+```sh
 # cmd1
 rsync -vP --remove-source-files --files-from=`find . -mtime +3 -type f` . 10.134.0.1::root/path-to
-{% endhighlight %}
+```
 
 上面"cmd1"的写法在文件数特别多的时候会出错: "Argument list too long" 。所以有另外一种写法：
-{% highlight sh %}
+```sh
 # cmd2
 find . -mtime +3 -type f -print0 | rsync -0vP --files-from=- . 10.134.12.234::root/search/guozengxin/data/spiderPic/
-{% endhighlight %}
+```
 
 这个命令中`-print0`和`rsync -0`的意思是find命令的输出和rsync的输入以NULL分割，预防文件名中包含奇怪的字符造成错误。`--files-from=-`表示rsync从标准输入读取文件列表。这样的命令组合不会有上一种方式的错误。
 

@@ -23,7 +23,7 @@ comments: true
 
 #### 直接在js的document对象中获取
 
-{% highlight js %}
+```js
 // using jQuery
 function getCookie(name) {
     var cookieValue = null;
@@ -41,7 +41,7 @@ function getCookie(name) {
     return cookieValue;
 }
 var csrftoken = getCookie('csrftoken');
-{% endhighlight %}
+```
 
 `getCookie`函数可以得到当前cookie中对应的key的值（注意这个函数需要用jquery）。
 
@@ -51,9 +51,9 @@ var csrftoken = getCookie('csrftoken');
 
 调用这个插件，可以用以下的方式获取cookie
 
-{% highlight js %}
+```js
 var csrftoken = $.cookie('csrftoken');
-{% endhighlight %}
+```
 
 #### 其他方法
 
@@ -64,7 +64,7 @@ var csrftoken = $.cookie('csrftoken');
 
 很简单，在post请求的发送数据中加入一条key是"csrfmiddlewaretoken"，value是上面得到的csrftoken就可以了。像这样：
 
-{% highlight js %}
+```js
 $.ajax({
     url : url,
     type: "POST",
@@ -74,7 +74,7 @@ $.ajax({
         // do something
     }
 });
-{% endhighlight %}
+```
 
 
 [CSRF]: http://baike.baidu.com/view/1609487.htm

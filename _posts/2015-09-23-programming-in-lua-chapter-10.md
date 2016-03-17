@@ -17,7 +17,7 @@ comments: true
 
 整个程序如下所示。
 
-{% highlight lua %}
+```lua
 local N = 8
 
 local function isplaceok(a, n, c)
@@ -55,7 +55,7 @@ local function addqueen(a, n)
 end
 
 addqueen({}, 1)
-{% endhighlight %}
+```
 
 函数`isplaceok`检查给出的一个数组是否是问题的解。问题的解必须保证没有两个皇后在同一列或者在同一条对角线上。
 
@@ -77,7 +77,7 @@ addqueen({}, 1)
 
 下面是完整的程序：
 
-{% highlight lua %}
+```lua
 local function allwords()
     local auxwords = function()
         for line in io.lines() do
@@ -107,7 +107,7 @@ table.sort(words, function(w1, w2)
 for i = 1, (tonumber(arg[1]) or 10) do
     print(words[i], counter[words[i]])
 end
-{% endhighlight %}
+```
 
 ## 马尔可夫链算法
 
@@ -117,15 +117,15 @@ end
 
 下面的函数用来将两个单词用空格连接起来：
 
-{% highlight lua %}
+```lua
 function prefix(w1, w2)
     return w1 .. ' ' .. w2
 end
-{% endhighlight %}
+```
 
 我们用*NOWORD*（一个新行）表示文件的结尾并且初始化前缀单词。例如，对文本“the more we try the more we do”，构造的表如下：
 
-{% highlight lua %}
+```lua
 {  ['\n \n'] = {'the'},
    ['\n the'] = {'more'},
    ['the more'] = {'we', 'we'}
@@ -133,11 +133,11 @@ end
    ['we try'] = {'the'}
    ['try the'] = {'more'}
    ['we do'] = {'\n'}
-{% endhighlight %}
+```
 
 程序用变量`statetab`保存这个表。在这个表的前缀列表中添加一个单词，用下面的函数：
 
-{% highlight lua %}
+```lua
 function insert(index, value)
     local list = statetab[index]
     if list == nil then
@@ -146,7 +146,7 @@ function insert(index, value)
         list[#list + 1] = value
     end
 end
-{% endhighlight %}
+```
 
 它首先检查该前缀是否在这个列表中，如果没有，它用新的值创建一个新项。否则，它把新的值添加到列表尾部。
 
@@ -154,7 +154,7 @@ end
 
 下面看完整的代码：
 
-{% highlight lua %}
+```lua
 function allwords()
     local line = io.read()
     local pos = 1
@@ -207,4 +207,4 @@ for i = 1, MAXGEN do
     io.write(nextword, ' ')
     w1 = w2; w2 = nextword
 end
-{% endhighlight %}
+```

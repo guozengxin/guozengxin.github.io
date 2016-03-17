@@ -19,7 +19,7 @@ comments: true
 
 用python中的[sklearn][]包，利用[PolynomialFeatures][]模块，来实现多项式回归的算法。使用方法可能参考：[Polynomial interpolation](http://scikit-learn.org/stable/auto_examples/linear_model/plot_polynomial_interpolation.html)，在这个题目没到拿到10分，应该是多项式的维度上没有选择好，后面有时间可以再做尝试。
 
-{% highlight python %}
+```python
 #!/usr/bin/env python
 # https://www.hackerrank.com/challenges/predicting-office-space-price
 
@@ -71,7 +71,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-{% endhighlight %}
+```
 
 [hackerrank]: https://www.hackerrank.com/
 [sklearn]: http://scikit-learn.org/stable/

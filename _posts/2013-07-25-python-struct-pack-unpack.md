@@ -204,49 +204,49 @@ struct模块中有三个比较重要的函数：
 
 一个C结构体：
 
-{% highlight c++ %}
+```c++
 struct Header {
     unsigned short id;
     char[4] tag;
     unsigned int version;
     unsigned int count;
 }
-{% endhighlight %}
+```
 
 现在接收到一个上述结果体数据，可以用unpack函数解析：
 
-{% highlight python %}
+```python
 import struct
 (id, tag, version, count) = struct.unpack('!H4s2I', s)
-{% endhighlight %}
+```
 
 在上述代码中，H对应id，4s对应tag，2I对应version和count。!表示是由网络字节顺序传输。
 
 这样，通过unpack，就解出对应的信息。同样，通过pack也可以将信息打包也对应的二进制格式：
 
-{% highlight python %}
+```python
 import struct
 ss = struct.pack("!H4s2I", id, tag, version, count);
-{% endhighlight %}
+```
 
 pack函数将信息打包成一个字符串，实际上是类C结果体字节流，表示的就是一个Header结构体。
 
 #### 示例2: 格式化类型和二进制的转换
 
-{% highlight python %}
+```python
 import struct
 a=12.34
 #将a变为二进制
 bytes=struct.pack('i',a)
-{% endhighlight %}
+```
 
 pack后，bytes就是一个str字符串，内容与a的二进制存储内容相同
 
 可以用如下代码进行反转换:
 
-{% highlight python %}
+```python
 (a,) = struct.unpack('i', bytes)
-{% endhighlight %}
+```
 
 注意：unpack返回的是一个tuple。
 

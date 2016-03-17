@@ -72,7 +72,7 @@ Logger类常用的方法可以分为两类：配置函数和输出日志函数
 #### 同时把日志输出到控制台和文件
 
 
-{% highlight python %}
+```python
 import logging
 
 # 创建一个logger
@@ -98,15 +98,15 @@ logger.addHandler(ch)
 
 # 记录一条日志
 logger.info('foorbar')
-{% endhighlight %}
+```
 
 ### Formatters
 
 Formatter对象用来设置最终输出的日志的格式、结构和内容。实例化Formatter类并带有两个参数可以创建一个Formatter对象：
 
-{% highlight python %}
+```python
 logging.Formatter.__init__(fmt=None, datefmt=None)
-{% endhighlight %}
+```
 
 日志格式的定义中可以使用的格式符号可以参考：[**LogRecord attributes**](http://docs.python.org/2/library/logging.html#logrecord-attributes).
 时间格式(datefmt)的定义与time模块的[**time.strftime()**](http://docs.python.org/2/library/time.html#time.strftime)相同。
@@ -121,7 +121,7 @@ python可以通过以下三种方式配置logging:
 
 #### 通过python源码配置logging
 
-{% highlight python %}
+```python
 import logging
 
 # 创建logger
@@ -147,7 +147,7 @@ logger.info('info message')
 logger.warn('warn message')
 logger.error('error message')
 logger.critical('critical message')
-{% endhighlight %}
+```
 
 执行这段代码，会输出如下日志：
 
@@ -192,7 +192,7 @@ logger.critical('critical message')
 
 用下面的代码加载logging.conf：
 
-{% highlight python %}
+```python
 import logging
 import logging.config
 
@@ -207,7 +207,7 @@ logger.info('info message')
 logger.warn('warn message')
 logger.error('error message')
 logger.critical('critical message')
-{% endhighlight %}
+```
 
 #### 使用dictionary配置logging
 
@@ -234,13 +234,13 @@ logger.critical('critical message')
 
 这段配置是用yaml格式书写的，可以这样加载：
 
-{% highlight python %}
+```python
 import logging
 #读取logging.conf文件
 D = yaml.load(open('logging.conf', 'r'))
 #加载配置
 logging.config.dictConfig(D)
-{% endhighlight %}
+```
 
 ### 参考
 
