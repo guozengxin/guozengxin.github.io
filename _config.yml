@@ -39,10 +39,10 @@ google_tracking_id: 'UA-48443270-1'
 url : http://guozengxin.me
 BASE_PATH : false
 ASSET_PATH : /assets
-archive_path: /archive.html
-categories_path : /categories.html
-about_path : /about.html
-tags_path : /tags.html
+archive_path: /archive/
+categories_path : /categories/
+about_path : /about/
+tags_path : /tags/
 rss_path : /rss.xml
 atom_path : /atom.xml
 
