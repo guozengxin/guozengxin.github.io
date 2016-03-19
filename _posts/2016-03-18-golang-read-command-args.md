@@ -7,7 +7,7 @@ tags: [golang, io, Args, 命令行参数]
 comments: true
 ---
 
-## GO语言获取命令行参数
+## os包获取命令行参数
 
 ```golang
 package main
@@ -33,6 +33,34 @@ $ ./args 1 2 3
 3
 ```
 
+## flag包获取命令行参数
+
+```go
+package main
+
+import "flag"  // flag包负责命令行解析的代码
+import "fmt"
+
+func main() {
+    // 定义参数i接收int型，注意返回的是指针
+    i := flag.Int("i", 10, "input a number")
+    // 定义参数s接收string，返回指针
+    s := flag.String("s", "ss", "input a string")
+    var a int
+    // 定义参数a，将解析的结果放到变量a
+    flag.IntVar(&a, "a", 20, "input a number")
+    // 执行解析
+    flag.Parse()
+
+    // 输出其余的参数
+    fmt.Printf("%v\n", flag.Args())
+    fmt.Printf("i=%d\n", *i)
+    fmt.Printf("s=%s\n", *s)
+    fmt.Printf("a=%d\n", a)
+}
+```
+
 ## 参考文档
 
 1. os: <https://golang.org/pkg/os/>
+2. flag: <https://golang.org/pkg/flag/>
