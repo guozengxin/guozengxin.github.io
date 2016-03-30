@@ -14,6 +14,7 @@ comments: true
 <!-- more -->
 
 本文中的C代码：
+
 ```c++
 /* File : example.c */
 
@@ -70,6 +71,7 @@ $ gcc -shared example.o example_wrap.o -o _example.so
 ```
 
 然后可以用以下方法调用上述模块：
+
 ```python
 >>> import example
 >>> example.fact(5)

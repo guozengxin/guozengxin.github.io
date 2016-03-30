@@ -20,6 +20,7 @@ print('Hello World!')
 ### 求阶乘
 
 这是一个稍微复杂点的例子，输入一个数字然后求阶乘：
+
 ```lua
 #!/usr/bin/env lua
 
