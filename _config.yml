@@ -1,15 +1,14 @@
 # 站点设置(jekyll自带)
 permalink: /:year/:month/:day/:title/
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "code"]
-highlighter: rouge
 paginate: 8
 timezone: Asia/Shanghai
 excerpt_separator: "<!-- more -->"
-gems:
+plugins:
   - jekyll-paginate
 
-# markdown设置
 markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
   auto_ids: true
@@ -17,15 +16,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
+  syntax_highlighter: rouge
 
 # 站点设置(个人)
 disqus_show_comment_count: true
@@ -36,7 +27,7 @@ google_tracking_id: 'UA-48443270-1'
 
 
 # 站点链接设置
-url : http://guozengxin.me
+url : http://guozengxin.com
 BASE_PATH : false
 ASSET_PATH : /assets
 archive_path: /archive/

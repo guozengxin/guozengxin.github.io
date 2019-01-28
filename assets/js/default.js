@@ -4,8 +4,8 @@ $(function() {
 	init();
 
 	function init() {
-		//testFeatures();
-		//addCodeLineNumbers();
+		// testFeatures();
+		// addCodeLineNumbers();
 		getNav();
 		addSidebarToggler();
 		addBlankTargetForLinks();

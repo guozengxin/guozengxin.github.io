@@ -6,4 +6,4 @@ Disallow: /googlec47cfd09b4a836b4.html
 Disallow: /page*/
 
 
-Sitemap: http://guozengxin.me/sitemap.xml
+Sitemap: http://guozengxin.com/sitemap.xml
